@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.yysms.com/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.yysms.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.yysms.com/">
+      <s:element name="SendSms">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sms" type="tns:SmsObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SmsObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Msisdns" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SMSContent" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExtNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlanSendTime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="NoPass" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendSmsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendSmsResult" type="tns:SendResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SendResult">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SendResultBase" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="SendResultBase" abstract="true">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PayType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="tns:ResultCode" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MsgId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SuccessCounts" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BillingCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Balance" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="BillingAmount" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="AlterSendResult" type="tns:SendResultBase" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomId" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ResultCode">
+        <s:restriction base="s:string">
+          <s:enumeration value="Unknown" />
+          <s:enumeration value="OK" />
+          <s:enumeration value="AppInactive" />
+          <s:enumeration value="ParamError" />
+          <s:enumeration value="UserNameEmpty" />
+          <s:enumeration value="PasswordEmpty" />
+          <s:enumeration value="UserNameError" />
+          <s:enumeration value="PasswordError" />
+          <s:enumeration value="BindIpError" />
+          <s:enumeration value="UserStop" />
+          <s:enumeration value="UserIdError" />
+          <s:enumeration value="Text64Error" />
+          <s:enumeration value="StampError" />
+          <s:enumeration value="SendTimeError" />
+          <s:enumeration value="JsonError" />
+          <s:enumeration value="MsisdnEmpty" />
+          <s:enumeration value="MsisdnRepeat" />
+          <s:enumeration value="NoChannel" />
+          <s:enumeration value="MsisdnError" />
+          <s:enumeration value="MsisdnBlack" />
+          <s:enumeration value="MsisdnNoChannel" />
+          <s:enumeration value="AmountNotEnough" />
+          <s:enumeration value="NoProduct" />
+          <s:enumeration value="ExtNumberError" />
+          <s:enumeration value="BalanceNotEnough" />
+          <s:enumeration value="ChannelTypeError" />
+          <s:enumeration value="TemplateError" />
+          <s:enumeration value="FrequentOperation" />
+          <s:enumeration value="NoEnabled" />
+          <s:enumeration value="TemplateIdError" />
+          <s:enumeration value="ContentEmpty" />
+          <s:enumeration value="ContentLong" />
+          <s:enumeration value="ContentError" />
+          <s:enumeration value="MsisdnsMany" />
+          <s:enumeration value="SensitiveWords" />
+          <s:enumeration value="RequiredSuffix" />
+          <s:enumeration value="SuffixError" />
+          <s:enumeration value="SubjectEmpty" />
+          <s:enumeration value="SubjectLong" />
+          <s:enumeration value="FramesEmpty" />
+          <s:enumeration value="ElementError" />
+          <s:enumeration value="FrameError" />
+          <s:enumeration value="FrameSizeLong" />
+          <s:enumeration value="SmilEmpty" />
+          <s:enumeration value="SmilExcessive" />
+          <s:enumeration value="ElementNameRepeat" />
+          <s:enumeration value="SizeLong" />
+          <s:enumeration value="TaskIdEmpty" />
+          <s:enumeration value="FaileList" />
+          <s:enumeration value="InternalError" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="I18NSendResult">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SendResultBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Mark" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="SendMms">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mms" type="tns:MmsObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MmsObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Msisdns" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExtNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlanSendTime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Elements" type="tns:ArrayOfMmsElement" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMmsElement">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MmsElement" nillable="true" type="tns:MmsElement" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MmsElement">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ElementType" type="tns:MmsElementType" />
+          <s:element minOccurs="0" maxOccurs="1" name="Base64Text" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="MmsElementType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Unknown" />
+          <s:enumeration value="Jpg" />
+          <s:enumeration value="Gif" />
+          <s:enumeration value="Png" />
+          <s:enumeration value="Bmp" />
+          <s:enumeration value="Smil" />
+          <s:enumeration value="Wav" />
+          <s:enumeration value="Mid" />
+          <s:enumeration value="Amr" />
+          <s:enumeration value="Mp3" />
+          <s:enumeration value="Text" />
+          <s:enumeration value="Xml" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="SendMmsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendMmsResult" type="tns:SendResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendI18NSms">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sms" type="tns:SmsObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendI18NSmsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendI18NSmsResult" type="tns:SendResultBase" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SendSmsSoapIn">
+    <wsdl:part name="parameters" element="tns:SendSms" />
+  </wsdl:message>
+  <wsdl:message name="SendSmsSoapOut">
+    <wsdl:part name="parameters" element="tns:SendSmsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMmsSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMms" />
+  </wsdl:message>
+  <wsdl:message name="SendMmsSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMmsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendI18NSmsSoapIn">
+    <wsdl:part name="parameters" element="tns:SendI18NSms" />
+  </wsdl:message>
+  <wsdl:message name="SendI18NSmsSoapOut">
+    <wsdl:part name="parameters" element="tns:SendI18NSmsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceSoap">
+    <wsdl:operation name="SendSms">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">发送短信接口</wsdl:documentation>
+      <wsdl:input message="tns:SendSmsSoapIn" />
+      <wsdl:output message="tns:SendSmsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMms">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">发送彩信接口</wsdl:documentation>
+      <wsdl:input message="tns:SendMmsSoapIn" />
+      <wsdl:output message="tns:SendMmsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendI18NSms">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">国际短信发送</wsdl:documentation>
+      <wsdl:input message="tns:SendI18NSmsSoapIn" />
+      <wsdl:output message="tns:SendI18NSmsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendSms">
+      <soap:operation soapAction="http://www.yysms.com/SendSms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMms">
+      <soap:operation soapAction="http://www.yysms.com/SendMms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendI18NSms">
+      <soap:operation soapAction="http://www.yysms.com/SendI18NSms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendSms">
+      <soap12:operation soapAction="http://www.yysms.com/SendSms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMms">
+      <soap12:operation soapAction="http://www.yysms.com/SendMms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendI18NSms">
+      <soap12:operation soapAction="http://www.yysms.com/SendI18NSms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+      <soap:address location="https://dx.ipyy.net/webservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceSoap12" binding="tns:WebServiceSoap12">
+      <soap12:address location="https://dx.ipyy.net/webservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

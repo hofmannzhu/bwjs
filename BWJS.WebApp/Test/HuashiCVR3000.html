@@ -1,0 +1,315 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=GBK">
+<title>华视电子CVR300E测试页面</title>
+<script type="text/javascript">
+
+function compareFirstFinger()
+{
+    var CertCtl = document.getElementById("CertCtl");
+    var varHavePF = CertCtl.bHavePF;
+    if (document.getElementById("firstFinData").value == "")
+    {
+        alert("第一枚指纹尚未采集");
+        return;
+    }
+    if (varHavePF == false)
+    {
+        alert("没有指纹信息");
+        return;
+    }
+
+    var result = CertCtl.MatchFPF();
+    if (result == "")
+    {
+        var similar = CertCtl.FSimilar;
+        document.getElementById("result").value = "对比第一枚指纹成功，相似度为：" + similar;
+    }
+    else
+    {
+        document.getElementById("result").value = result;
+    }
+}
+
+function compareSecondFinger()
+{
+    var CertCtl = document.getElementById("CertCtl");
+    var varHavePF = CertCtl.bHavePF;
+
+    if (document.getElementById("secondFinData").value == "")
+    {
+        alert("第一枚指纹尚未采集");
+        return;
+    }
+    if (varHavePF == false)
+    {
+        alert("没有指纹信息");
+        return;
+    }
+
+    var result = CertCtl.SSimilar();
+    if (result == "")
+    {
+        var similar = CertCtl.SSimilar;
+        document.getElementById("result").value = "对比第二枚指纹成功，相似度为：" + similar;
+    }
+    else
+    {
+        document.getElementById("result").value = result;
+    }
+}
+
+function scanFirstFinger()
+{
+    var CertCtl = document.getElementById("CertCtl");
+    var filePath = document.getElementById("finPath1").value;
+    if (filePath == "")
+    {
+        alert("请输入保存路径");
+        return;
+    }
+    var result = CertCtl.ScanFirstFinger(filePath);
+    if (result == "")
+    {
+        document.getElementById("result").value = "采集成功";
+        document.getElementById("firstFinData").value = CertCtl.PictureFFPData;
+        document.getElementById("firstFinImg").src = 'data:image/bmp;base64,' + CertCtl.PictureFFPData;
+    }
+    else
+        document.getElementById("result").value = result;
+}
+function scanSecondFinger()
+{
+    var CertCtl = document.getElementById("CertCtl");
+    var filePath = document.getElementById("finPath2").value;
+    if (filePath == "")
+    {
+        alert("请输入保存路径");
+        return;
+    }
+    var result = CertCtl.ScanSecondFinger(filePath);
+    if (result == "")
+    {
+        document.getElementById("result").value = "采集成功";
+        document.getElementById("secondFinData").value = CertCtl.PictureSPFData;
+        document.getElementById("secondFinImg").src = 'data:image/bmp;base64,' + CertCtl.PictureSPFData;
+    }
+    else
+        document.getElementById("result").value = result;
+}
+function getVerSion()
+{
+	clearForm();
+}
+
+function clearForm()
+{
+    document.getElementById("timeElapsed").value = "";
+    document.getElementById("samID").value = "";
+	document.getElementById("partyName").value = "";
+	document.getElementById("gender").value = "";
+	document.getElementById("nation").value = "";
+	document.getElementById("bornDay").value = "";
+	document.getElementById("certAddress").value = "";
+	document.getElementById("certNumber").value = "";
+	document.getElementById("certOrg").value = "";
+	document.getElementById("effDate").value = "";
+	document.getElementById("expDate").value = "";
+	document.getElementById("result").value = "";
+	document.getElementById("headPath").value = "";
+	document.getElementById("hasFinger").value = "";
+	document.getElementById("headBase64Data").value = "";
+	document.getElementById("headBase64DataLen").value = "";
+	document.getElementById("dispHead").src = "";
+	document.getElementById("finPath1").value = "c:\\finger1.bmp";
+	document.getElementById("finPath2").value = "c:\\finger2.bmp";
+	document.getElementById("firstFinData").value = "";
+	document.getElementById("secondFinData").value = "";
+	document.getElementById("firstFinImg").src = "";
+	document.getElementById("secondFinImg").src = "";
+
+	var CertCtl = document.getElementById("CertCtl");
+	CertCtl.ClearData(3); // 1为控件缓存的读卡数据，2为缓存的指纹数据，3为所有缓存数据
+}
+function connect()
+{
+	clearForm();
+	
+	var CertCtl = document.getElementById("CertCtl");
+	try 
+	{
+	    var result = CertCtl.OpenComm();
+	    if (result == "")
+	        document.getElementById("result").value = "连接成功";
+	    else
+		    document.getElementById("result").value = result;
+    } catch (e) 
+	{
+	}
+}
+function disconnect()
+{
+	clearForm();
+
+	var CertCtl = document.getElementById("CertCtl");
+	try
+	{
+	    var result = CertCtl.CloseComm();
+	    if (result == "")
+	        document.getElementById("result").value = "断开成功";
+	    else
+	        document.getElementById("result").value = result;
+	} catch (e)
+	{
+	}
+}
+
+function readCert()
+{
+	clearForm();
+	
+	var CertCtl = document.getElementById("CertCtl");
+
+	try 
+	{
+		var startDt = new Date();
+		var result = CertCtl.ReadCard();
+		var endDt = new Date();
+
+		document.getElementById("timeElapsed").value = (endDt.getTime() - startDt.getTime()) + "毫秒";
+		if(result == "")
+		    document.getElementById("result").value = "读卡成功";
+		else
+		    document.getElementById("result").value = result;
+
+		if (result == "")
+		{
+		    document.getElementById("partyName").value = CertCtl.Name;
+		    document.getElementById("gender").value = CertCtl.Sex;
+		    document.getElementById("nation").value = CertCtl.Nation;
+		    document.getElementById("bornDay").value = CertCtl.Born;
+		    document.getElementById("certAddress").value = CertCtl.Address;
+		    document.getElementById("certNumber").value = CertCtl.CardNo;
+		    document.getElementById("certOrg").value = CertCtl.IssuedAt;
+		    document.getElementById("effDate").value = CertCtl.EffectedDate;
+		    document.getElementById("expDate").value = CertCtl.ExpiredDate;
+		    document.getElementById("samID").value = CertCtl.CardReaderId;
+		    document.getElementById("headPath").value = CertCtl.CardPicPath;
+		    document.getElementById("headBase64Data").value = CertCtl.CardPictureData;
+		    document.getElementById("headBase64DataLen").value = CertCtl.CardPictureDataLen;
+		    document.getElementById("dispHead").src = 'data:image/jpeg;base64,' + CertCtl.CardPictureData;
+		    var varHavePF = CertCtl.bHavePF;
+		    if(varHavePF == true)
+		        document.getElementById("hasFinger").value = "有指纹信息";
+		    else
+		        document.getElementById("hasFinger").value = "无指纹信息";
+		}
+    } catch (e)
+	{
+	}
+}
+</script>
+</head>
+<body bgcolor="#D2F0FF"  >
+
+<h1 style="text-align:center;color:#5555FF;">华视电子CVR300E测试页面</h1>
+
+<table border="0" width="50%" cellpadding="0" cellspacing="0" style="padding-left:100px;">
+<tr>
+<td><input type="button" value="连接" onclick="connect()"></td>
+<td><input type="button" value="读卡" onclick="readCert()"></td>
+<td><input type="button" value="采集第一枚指纹" onclick="scanFirstFinger()"></td>
+<td><input type="button" value="采集第二枚指纹" onclick="scanSecondFinger()"></td>
+<td><input type="button" value="对比第一枚指纹" onclick="compareFirstFinger()"></td>
+<td><input type="button" value="对比第二枚指纹" onclick="compareSecondFinger()"></td>
+<td><input type="button" value="清空数据" onclick="clearForm()"></td>
+<td><input type="button" value="断开" onclick="disconnect()"></td>
+</tr>
+</table>
+<br/>
+<table border="0" width="100%" cellpadding="0" cellspacing="10">
+<tr>
+<td align="right">读卡时间：</td>
+<td><input type="text" id="timeElapsed" size="49" style="width:400px;" readonly="readonly"></td>
+</tr>
+<tr>
+<td align="right">安全模块号：</td>
+<td><input type="text" id="samID" size="49" style="width:400px;" readonly="readonly"></td>
+</tr>
+<tr>
+<td align="right">头像路径：</td>
+<td><input type="text" id="headPath" size="49" style="width:400px;" readonly="readonly"></td>
+</tr>
+<tr>
+<td align="right">是否有指纹：</td>
+<td><input type="text" id="hasFinger" size="49" style="width:400px;" readonly="readonly"></td>
+</tr>
+<tr>
+<td align="right">姓名：</td>
+<td><input type="text" id="partyName" size="49" style="width:400px;" readonly="readonly">(要求中间，两头都没有空格)</td>
+</tr>
+<tr>
+<td align="right">性别：</td>
+<td><input type="text" id="gender" size="49" style="width:400px;" readonly="readonly">(取值为“1”（表示“男”）或“0”（表示“女”）)</td>
+</tr>
+<tr>
+<td align="right">民族：</td>
+<td><input type="text" id="nation" size="49" style="width:400px;" readonly="readonly">(汉字即可)</td>
+</tr>
+<tr>
+<td align="right">出生日期：</td>
+<td><input type="text" id="bornDay" size="49" style="width:400px;" readonly="readonly">(要求格式为:yyyyMMdd，长度为8)</td>
+</tr>
+<tr>
+<td align="right">住址：</td>
+<td><input type="text" id="certAddress" size="49" style="width:400px;" readonly="readonly"></td>
+</tr>
+<tr>
+<td align="right">身份证号：</td>
+<td><input type="text" id="certNumber" size="49" style="color:#FF0000;width:400px;" readonly="readonly">(居民身份号码，长度18位)</td>
+</tr>
+<tr>
+<td align="right">签发机关：</td>
+<td><input type="text" id="certOrg" size="49" style="width:400px;" readonly="readonly"></td>
+</tr>
+<tr>
+<td align="right">开始期限：</td>
+<td><input type="text" id="effDate" size="49" style="width:400px;" readonly="readonly">(要求格式为:yyyyMMdd，长度为8)</td>
+</tr>
+<tr>
+<td align="right">结束期限：</td>
+<td><input type="text" id="expDate" size="49" style="width:400px;" readonly="readonly">(要求格式为:yyyyMMdd，长度为8，或者是“长期”)</td>
+</tr>
+<tr>
+<td align="right">操作结果：</td>
+<td><input type="text" id="result" size="49" style="width:400px;" readonly="readonly"></td>
+</tr>
+<tr>
+<td align="right">头像数据长度：</td>
+<td><input type="text" id="headBase64DataLen" size="49" style="width:400px;" readonly="readonly"></td>
+</tr>
+<td align="right">指纹1保存路径：</td>
+<td><input type="text" id="finPath1" size="49" style="width:400px;"></td>
+</tr>
+<td align="right">指纹2保存路径：</td>
+<td><input type="text" id="finPath2" size="49" style="width:400px;"></td>
+</tr>
+<tr>
+<td align="right">头像base64数据</td>
+<td><textarea id="headBase64Data" rows="8" cols="47" style="width:400px;" readonly="readonly"></textarea><img  id="dispHead" src="" style="width: 91px; height: 108px" name="dispHead"/></td>
+</tr>
+<td align="right">指纹base64数据1</td>
+<td><textarea id="firstFinData" rows="8" cols="47" style="width:400px;" readonly="readonly"></textarea><img  id="firstFinImg" src="" style="width: 91px; height: 108px" name="firstFinImg"/></td>
+</tr>
+<td align="right">指纹base64数据2</td>
+<td><textarea id="secondFinData" rows="8" cols="47" style="width:400px;" readonly="readonly"></textarea><img  id="secondFinImg" src="" style="width: 91px; height: 108px" name="secondFinImg"/></td>
+</tr>
+</table>
+
+
+<OBJECT classid="clsid:5819234B-5977-4C82-9C59-A9D3C7D46083"
+	  id="CertCtl" name="CertCtl" width="0" height="0" >
+</OBJECT>
+</body>
+</html>

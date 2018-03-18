@@ -1,0 +1,324 @@
+﻿<!DOCTYPE html>
+<html>
+<script src="/Scripts/pagecommon.js"></script>
+<head>
+    <meta charset="utf-8">
+    <style type="text/css">
+        * {
+            font-family: microsoft yahei;
+            padding: 0;
+            margin: 0;
+            font-style: normal;
+            box-sizing: content-box;
+        }
+
+        .parent_div {
+            border: 4px double #dfdfdf;
+            margin: 30px auto;
+            width: 990px;
+            padding-bottom: 30px;
+        }
+
+        .title_p {
+            height: 80px;
+            font-size: 24px;
+            color: #fb6113;
+            width: 150px;
+            margin: 0 auto;
+            line-height: 80px;
+        }
+
+        .content_yz {
+            padding-left: 45px;
+            border-bottom: 1px solid #e5e5e5;
+            font-size: 14px;
+        }
+
+            .content_yz span {
+                display: inline-block;
+                color: #666;
+                height: 50px;
+                line-height: 50px;
+            }
+
+            .content_yz .span1 {
+                width: 35%;
+                margin-right: 10px;
+            }
+
+            .content_yz .span2 {
+                width: 10%;
+            }
+
+        .ml30 {
+            margin-left: 30px;
+        }
+
+        .bt1 {
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .content_yz .br1 {
+            border-right: 1px solid #e5e5e5;
+        }
+
+        .content_yz .span2 .success, .content_ts .span2 .success, .content_yz .span2 .error, .content_ts .span2 .error {
+            color: #fff;
+            background: #06972b;
+            width: 60%;
+            display: inline-block;
+            text-align: center;
+            border-radius: 6px;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .content_yz .span2 .error, .content_ts .span2 .error {
+            background: #d03005;
+        }
+
+        .content_th, .content_td, .content_ts {
+            padding-left: 45px;
+            font-size: 14px;
+            color: #999;
+            height: 50px;
+            line-height: 50px;
+        }
+
+        .content_dc {
+            padding-left: 45px;
+            font-size: 14px;
+            color: #999;
+        }
+
+        .content_th, .content_ts_th, .content_hmd {
+            background: #f1f1f1;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+            .content_th span, .content_td span {
+                width: 19%;
+                display: inline-block;
+                height: 50px;
+                line-height: 50px;
+            }
+
+        .content_ts .span1 {
+            width: 32%;
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+            padding-left: 5px;
+        }
+
+        .content_hmd .span1 {
+            padding-top: 0;
+        }
+
+        .content_ts .span2 {
+            width: 16%;
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .content_dc .span1 {
+            width: 32%;
+            display: inline-block;
+            height: 50px;
+            padding-left: 5px;
+            position: relative;
+        }
+
+        .content_dc .span2 {
+            width: 16%;
+            display: inline-block;
+            height: 50px;
+            position: relative;
+        }
+
+            .content_dc .span2 em, .content_dc .span1 em {
+                position: absolute;
+            }
+
+        .content_zms {
+            padding-left: 45px;
+            font-size: 14px;
+        }
+
+            .content_zms .span1, .content_zms .span2 {
+                color: #666;
+                display: inline-block;
+                height: 50px;
+                line-height: 50px;
+            }
+
+            .content_zms .span2 {
+                color: #999;
+            }
+
+                .content_zms .span2 .success, .content_zms .span2 .error {
+                    color: #fff;
+                    background: #06972b;
+                    width: 20%;
+                    display: inline-block;
+                    text-align: center;
+                    border-radius: 6px;
+                    height: 30px;
+                    line-height: 30px;
+                }
+
+                .content_zms .span2 .error {
+                    background: #d03005;
+                }
+
+        .jd_report_inputinfo {
+            margin: 0 auto;
+            font-size: 14px;
+            margin-bottom: 30px;
+            width: 900px;
+        }
+
+            .jd_report_inputinfo dl {
+                background-color: #f8f8f8;
+                padding-bottom: 16px;
+                padding-left: 100px;
+            }
+
+                .jd_report_inputinfo dl:after, .jd_report_inputinfo dl:before {
+                    content: '';
+                    clear: both;
+                    display: block;
+                    height: 0;
+                    visibility: hidden;
+                }
+
+                .jd_report_inputinfo dl dd em {
+                    font-style: normal;
+                }
+
+                .jd_report_inputinfo dl dd span {
+                    color: #333;
+                    display: inline-block;
+                    margin-left: 10px;
+                    text-indent: 0;
+                }
+
+                .jd_report_inputinfo dl dd {
+                    color: #999;
+                    font-size: 14px;
+                    margin-top: 16px;
+                    width: 49%;
+                    display: inline-block;
+                }
+
+            .jd_report_inputinfo .success, .jd_report_inputinfo .error {
+                color: #fff;
+                background: #06972b;
+                width: 10%;
+                display: inline-block;
+                text-align: center;
+                border-radius: 4px;
+                height: 25px;
+                line-height: 23px;
+            }
+
+            .jd_report_inputinfo .error {
+                background: #d03005;
+            }
+
+        .yjfk {
+            color: #fb6113;
+            font-size: 28px;
+        }
+
+            .yjfk .p1 {
+                display: inline-block;
+                width: 32%;
+                text-align: center;
+            }
+
+            .yjfk .span1 {
+                color: #999;
+            }
+
+            .yjfk .success, .yjfk .error {
+                background: #06972b;
+                color: #fff;
+                display: inline-block;
+                padding: 0 10px;
+                border-radius: 4px;
+                text-align: center;
+            }
+
+            .yjfk .error {
+                background: #d03005;
+            }
+
+        .jbxx_p .p_sj {
+            display: inline-block;
+            font-size: 15px;
+            color: #999;
+            position: relative;
+        }
+
+        .jbxx_p .p1 {
+            width: 10%;
+            padding-left: 10px;
+        }
+
+        .jbxx_p .p2 {
+            width: 52%;
+            padding: 10px 0;
+        }
+
+        .jbxx_p .p4 {
+            width: 88%;
+            padding: 10px 0;
+        }
+
+        .jbxx_p .vt {
+            vertical-align: top;
+            padding-top: 10px;
+        }
+
+        .jbxx_p .success, .jbxx_p .error {
+            background: #06972b;
+            color: #fff;
+            display: inline-block;
+            padding: 0 10px;
+            border-radius: 4px;
+            text-align: center;
+            margin: 0 5px;
+        }
+
+        .jbxx_p .error {
+            background: #d03005;
+        }
+
+        .jbxx_p img {
+            position: absolute;
+            top: -5px;
+            cursor: pointer;
+        }
+
+        .yppgbg {
+            font-size: 48px;
+            color: #fb6113;
+            margin: 0 auto 60px;
+            width: 300px;
+        }
+
+        .content_zms .crzs {
+            color: #fb6113;
+        }
+    </style>
+</head>
+<body>
+
+    <div style="width: 990px;margin: 30px auto 50px;">
+        <p class="yjfk"><span>报告生成中。。。</span>
+    </div>
+</body>
+</html>

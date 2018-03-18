@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3FF8A3A7-3451-48C6-B81E-A458CEB58713}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MofangInterfacle.BLL.Test</RootNamespace>
+    <AssemblyName>MofangInterfacle.BLL.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="BaoxianUnit.cs" />
+    <Compile Include="ExceptionLogBLLUnit.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BWJS.BLL\BWJS.BLL.csproj">
+      <Project>{fdedc76d-5bb4-4a07-9cd8-14fc0fe3bf4a}</Project>
+      <Name>BWJS.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BWJS.Model\BWJS.Model.csproj">
+      <Project>{221aa85c-c8e4-4f2b-ac0c-382bdd8f6052}</Project>
+      <Name>BWJS.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BWJS.SMS\BWJS.SMS.csproj">
+      <Project>{f23cb3bc-1d6a-4178-9d40-0abc653ca894}</Project>
+      <Name>BWJS.SMS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BWJSLog.BLL\BWJSLog.BLL.csproj">
+      <Project>{806120a4-77da-4311-b3de-87aea78168fc}</Project>
+      <Name>BWJSLog.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BWJSLog.Model\BWJSLog.Model.csproj">
+      <Project>{587469c2-9993-46d7-a3af-4e8b70404060}</Project>
+      <Name>BWJSLog.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mofang.BLL\Mofang.BLL.csproj">
+      <Project>{f048a070-0916-460f-8f9d-6829357219a3}</Project>
+      <Name>Mofang.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mofang.Model\Mofang.Model.csproj">
+      <Project>{c95fe306-d799-40fc-bcd1-91e66e5848aa}</Project>
+      <Name>Mofang.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MofangInterface.BLL\MofangInterface.BLL.csproj">
+      <Project>{bc4dea29-26e6-492a-8700-783c20083a59}</Project>
+      <Name>MofangInterface.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MofangInterface.Model\MofangInterface.Model.csproj">
+      <Project>{d968aa5e-e66c-4b40-a8a8-aa9d67d5ca8e}</Project>
+      <Name>MofangInterface.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityHelper\UtilityHelper.csproj">
+      <Project>{b9381b8a-312d-4953-ae06-3f2b5c22480a}</Project>
+      <Name>UtilityHelper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

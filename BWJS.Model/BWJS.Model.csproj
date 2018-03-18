@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{221AA85C-C8E4-4F2B-AC0C-382BDD8F6052}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BWJS.Model</RootNamespace>
+    <AssemblyName>BWJS.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\CompanyRelationBackups.cs" />
+    <Compile Include="InputModel\AddMachineInputModel.cs" />
+    <Compile Include="InputModel\AdPostionReleaseInputModel.cs" />
+    <Compile Include="InputModel\BindingMachineInputModel.cs" />
+    <Compile Include="InputModel\BindMachineInputModel.cs" />
+    <Compile Include="ErrCode.cs" />
+    <Compile Include="InputModel\InputModelBase.cs" />
+    <Compile Include="InputModel\LoginInputModel.cs" />
+    <Compile Include="InputModel\UnBindMachineInputModel.cs" />
+    <Compile Include="InputModel\UpdateMachineInputModel.cs" />
+    <Compile Include="InputModel\UpdateUserInputModel.cs" />
+    <Compile Include="Model\AdPosition.cs" />
+    <Compile Include="Model\AdPositionBackups.cs" />
+    <Compile Include="Model\AdRelease.cs" />
+    <Compile Include="Model\AdReleaseBackup.cs" />
+    <Compile Include="Model\CityArea.cs" />
+    <Compile Include="Model\CityAreaBackup.cs" />
+    <Compile Include="Model\CompanyCategory.cs" />
+    <Compile Include="Model\CompanyNetLoan.cs" />
+    <Compile Include="Model\CompanyRelation.cs" />
+    <Compile Include="Model\DepartmentInfo.cs" />
+    <Compile Include="Model\Function.cs" />
+    <Compile Include="Model\IdentityCardLibrary.cs" />
+    <Compile Include="Model\LoginUserCookie.cs" />
+    <Compile Include="Model\Machine.cs" />
+    <Compile Include="Model\MachineBackups.cs" />
+    <Compile Include="Model\MachineSupplier.cs" />
+    <Compile Include="Model\NetLoanApply.cs" />
+    <Compile Include="Model\R_UsersMachine.cs" />
+    <Compile Include="Model\SSKDRequestParas.cs" />
+    <Compile Include="Model\NewSSKDCookie.cs" />
+    <Compile Include="Model\NL_AssetInfo.cs" />
+    <Compile Include="Model\NL_Bank.cs" />
+    <Compile Include="Model\NL_Consult.cs" />
+    <Compile Include="Model\NL_ConsultExt.cs" />
+    <Compile Include="Model\NL_ConsultStatusChangeLog.cs" />
+    <Compile Include="Model\NL_Contacts.cs" />
+    <Compile Include="Model\NL_IdentityInfo.cs" />
+    <Compile Include="Model\NL_Loan.cs" />
+    <Compile Include="Model\NL_Picture.cs" />
+    <Compile Include="Model\NL_ProfessionInfo.cs" />
+    <Compile Include="Model\NL_Task.cs" />
+    <Compile Include="Model\OrderRebateCheck.cs" />
+    <Compile Include="Model\OrderRebateSettlementDetails.cs" />
+    <Compile Include="Model\Resource.cs" />
+    <Compile Include="Model\Channel.cs" />
+    <Compile Include="Model\GlobalClass.cs" />
+    <Compile Include="Model\Company.cs" />
+    <Compile Include="Model\CompanyRebate.cs" />
+    <Compile Include="Model\OrderPayApply.cs" />
+    <Compile Include="Model\OrderRebate.cs" />
+    <Compile Include="Model\OrderRebateSettlementApply.cs" />
+    <Compile Include="Model\ProductRelation.cs" />
+    <Compile Include="Model\Region.cs" />
+    <Compile Include="Model\Role.cs" />
+    <Compile Include="Model\RoleFunction.cs" />
+    <Compile Include="Model\NLLoanConfig.cs" />
+    <Compile Include="Model\SupplierInfo.cs" />
+    <Compile Include="Model\SysConfig.cs" />
+    <Compile Include="Model\SysSettings.cs" />
+    <Compile Include="Model\UserBank.cs" />
+    <Compile Include="Model\UserRole.cs" />
+    <Compile Include="Model\Users.cs" />
+    <Compile Include="Model\UsersBackups.cs" />
+    <Compile Include="Model\XSDCompany.cs" />
+    <Compile Include="OutputModel\AdPostionReleaseOutputModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReturnModel.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

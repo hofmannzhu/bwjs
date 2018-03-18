@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>基于浏览器的HTML5查找地理位置</title>
+    <link href="/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/css/NewSSKD/main.css" rel="stylesheet" />
+    <link href="/Scripts/skin/layer.css" rel="stylesheet" />
+    <link href="/Scripts/skin/layer.ext.css" rel="stylesheet" />
+    <script src="/Scripts/jquery.min.js" type="text/javascript"></script>
+    <script src="/Scripts/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery-ui.js" type="text/javascript"></script>
+    <script src="/Scripts/bootbox.js" type="text/javascript"></script>
+    <script src="/Scripts/layer.js" type="text/javascript"></script>
+    <script src="/Scripts/NewSSKD/common.js" type="text/javascript"></script>
+    <!--<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=TBHTGEjDi6X1MRIthT3TLFvo5Zy07IhK"></script>-->
+    <!-- 百度API -->
+    <script src="http://api.map.baidu.com/api?v=1.2" type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+            bwjsLoadingDemo("努力加载中...");
+        });
+        function getLocation() {
+            var options = {
+                enableHighAccuracy: true,
+                maximumAge: 1000
+            }
+            if (navigator.geolocation) {
+                //浏览器支持geolocation
+                navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
+            } else {
+                //浏览器不支持geolocation
+                bwjsAlert('您的浏览器不支持地理位置定位');
+            }
+        }
+        //成功时
+        function onSuccess(position) {
+            //经度
+            var longitude = position.coords.longitude;
+            //纬度
+            var latitude = position.coords.latitude;
+            bwjsAlert('经度' + longitude + '，纬度' + latitude);
+
+            //根据经纬度获取地理位置，不太准确，获取城市区域还是可以的
+            var map = new BMap.Map("allmap");
+            var point = new BMap.Point(longitude, latitude);
+            var gc = new BMap.Geocoder();
+            gc.getLocation(point, function (rs) {
+                var addComp = rs.addressComponents;
+                bwjsAlert(addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber);
+                bwjsAlert(JSON.stringify(rs));
+            });
+        }
+        //失败时
+        function onError(error) {
+            switch (error.code) {
+                case 1:
+                    bwjsAlert("位置服务被拒绝");
+                    break;
+                case 2:
+                    bwjsAlert("暂时获取不到位置信息");
+                    break;
+                case 3:
+                    bwjsAlert("获取信息超时");
+                    break;
+                case 4:
+                    bwjsAlert("未知错误");
+                    break;
+            }
+        }
+        window.onload = getLocation;
+
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F126E417-F38D-4F9E-AAAF-8B0C58B9622A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BWJS.DAL</RootNamespace>
+    <AssemblyName>BWJS.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdHelper\AdHelperDAL.cs" />
+    <Compile Include="BaseService.cs" />
+    <Compile Include="Ad\AdPositionDAL.cs" />
+    <Compile Include="Ad\AdReleaseDAL.cs" />
+    <Compile Include="Ad\ResourceDAL.cs" />
+    <Compile Include="CityAreaDAL.cs" />
+    <Compile Include="CompanyCategoryDAL.cs" />
+    <Compile Include="CompanyNetLoanDAL.cs" />
+    <Compile Include="CompanyRelationDAL.cs" />
+    <Compile Include="DepartmentInfoDAL.cs" />
+    <Compile Include="FunctionDAL.cs" />
+    <Compile Include="IdentityCardLibraryDAL.cs" />
+    <Compile Include="MachineDAL.cs" />
+    <Compile Include="ChannelDAL.cs" />
+    <Compile Include="GlobalClassDAL.cs" />
+    <Compile Include="CompanyDAL.cs" />
+    <Compile Include="CompanyRebateDAL.cs" />
+    <Compile Include="MachineSupplierDAL.cs" />
+    <Compile Include="NetLoanApplyDAL.cs" />
+    <Compile Include="NL_AssetInfoDAL.cs" />
+    <Compile Include="NL_BankDAL.cs" />
+    <Compile Include="NL_ConsultDAL.cs" />
+    <Compile Include="NL_ConsultStatusChangeLogDAL.cs" />
+    <Compile Include="NL_ContactsDAL.cs" />
+    <Compile Include="NL_IdentityInfoDAL.cs" />
+    <Compile Include="NL_LoanDAL.cs" />
+    <Compile Include="NL_PictureDAL.cs" />
+    <Compile Include="NL_ProfessionInfoDAL.cs" />
+    <Compile Include="NL_TaskDAL.cs" />
+    <Compile Include="OrderPayApplyDAL.cs" />
+    <Compile Include="OrderRebateCheckDAL.cs" />
+    <Compile Include="OrderRebateDAL.cs" />
+    <Compile Include="OrderRebateSettlementApplyDAL.cs" />
+    <Compile Include="OrderRebateSettlementDetailsDAL.cs" />
+    <Compile Include="ProductRelationDAL.cs" />
+    <Compile Include="RegionDAL.cs" />
+    <Compile Include="RoleDAL.cs" />
+    <Compile Include="RoleFunctionDAL.cs" />
+    <Compile Include="NLLoanConfigDAL.cs" />
+    <Compile Include="R_UsersMachineDAL.cs" />
+    <Compile Include="SupplierInfoDAL.cs" />
+    <Compile Include="SysConfigDAL.cs" />
+    <Compile Include="SysSettingsDAL.cs" />
+    <Compile Include="UserBankDAL.cs" />
+    <Compile Include="UserRoleDAL.cs" />
+    <Compile Include="UsersDAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BWJS.Model\BWJS.Model.csproj">
+      <Project>{221aa85c-c8e4-4f2b-ac0c-382bdd8f6052}</Project>
+      <Name>BWJS.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BWJSLog.BLL\BWJSLog.BLL.csproj">
+      <Project>{806120a4-77da-4311-b3de-87aea78168fc}</Project>
+      <Name>BWJSLog.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityHelper\UtilityHelper.csproj">
+      <Project>{b9381b8a-312d-4953-ae06-3f2b5c22480a}</Project>
+      <Name>UtilityHelper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

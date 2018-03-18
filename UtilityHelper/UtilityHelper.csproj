@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B9381B8A-312D-4953-AE06-3F2B5C22480A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UtilityHelper</RootNamespace>
+    <AssemblyName>UtilityHelper</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.BarCode, Version=17.8.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.BarCode.17.8.0\lib\net4.5\Aspose.BarCode.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Aspose.Cells, Version=7.4.1.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.1.0.0\lib\Aspose.Cells.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Aspose.Pdf, Version=7.7.0.0, Culture=neutral, PublicKeyToken=47b2d0fcacdd3eb6, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.1.0.0\lib\Aspose.Pdf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Aspose.Slides, Version=7.2.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.1.0.0\lib\Aspose.Slides.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Aspose.Words, Version=14.7.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.1.0.0\lib\Aspose.Words.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Bytescout.Spreadsheet">
+      <HintPath>..\packages\Bytescout.Spreadsheet.2.4.0.1346\lib\net45\Bytescout.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\packages\ICSharpCode.SharpZipLib.dll.0.85.4.369\lib\net20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\packages\izenda.itextsharp.4.0.3.0\lib\net20\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Kaliko.ImageLibrary">
+      <HintPath>..\packages\ImageLibrary.2.0.5\lib\net45\Kaliko.ImageLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Client, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Client.2.2.2\lib\net45\Microsoft.AspNet.SignalR.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.4.4\lib\net45\MongoDB.Bson.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.4.4\lib\net45\MongoDB.Driver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.4.4\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="sysglobl" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Device" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ThoughtWorks.QRCode, Version=1.0.4778.30637, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ThoughtWorks.QRCode.1.1.0\lib\ThoughtWorks.QRCode.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AsposeHelper.cs" />
+    <Compile Include="BaseHandler.cs" />
+    <Compile Include="BWJSCommonHelper.cs" />
+    <Compile Include="BWJSLogHelperSQL.cs" />
+    <Compile Include="BWJSHelperSQL.cs" />
+    <Compile Include="CacheHelper.cs" />
+    <Compile Include="CommonHelper.cs" />
+    <Compile Include="CompressionModule.cs" />
+    <Compile Include="ConstantsConfig.cs" />
+    <Compile Include="CookieHelper.cs" />
+    <Compile Include="CrossDomainCookie.cs" />
+    <Compile Include="Data\DataPager.cs" />
+    <Compile Include="Data\DataPagerTable.cs" />
+    <Compile Include="Data\SqlDataUtilityHelper.cs" />
+    <Compile Include="Data\SqlErrorMessage.cs" />
+    <Compile Include="Data\SqlQueryParameters.cs" />
+    <Compile Include="Data\SqlTransactionParameter.cs" />
+    <Compile Include="Data\TablePrimaryKeyValue.cs" />
+    <Compile Include="DbHelperSQL.cs" />
+    <Compile Include="DESEncrypt.cs" />
+    <Compile Include="DevicePositioning.cs" />
+    <Compile Include="DigitToChnText.cs" />
+    <Compile Include="DNTRequest.cs" />
+    <Compile Include="ExcelHelper.cs" />
+    <Compile Include="ExtendMethodsClass.cs" />
+    <Compile Include="FileItem.cs" />
+    <Compile Include="FileToZip.cs" />
+    <Compile Include="HmacMD5.cs" />
+    <Compile Include="HtmlHelper.cs" />
+    <Compile Include="HttpHelper.cs" />
+    <Compile Include="HttpService.cs" />
+    <Compile Include="HttpUtils.cs" />
+    <Compile Include="IDataQueue.cs" />
+    <Compile Include="ImageHelper.cs" />
+    <Compile Include="IpHelper.cs" />
+    <Compile Include="IpInfo.cs" />
+    <Compile Include="JsonRequest.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="MailSendHelper.cs" />
+    <Compile Include="MergePDFHelper.cs" />
+    <Compile Include="PinYinConverter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QRHelper.cs" />
+    <Compile Include="RequestHelper.cs" />
+    <Compile Include="RouteHttpModule.cs" />
+    <Compile Include="RSA.cs" />
+    <Compile Include="SendMessage.cs" />
+    <Compile Include="SerializerHelper.cs" />
+    <Compile Include="SMSSendHelper.cs" />
+    <Compile Include="StringUtilityHelper.cs" />
+    <Compile Include="SysUtils.cs" />
+    <Compile Include="TemplateHelper.cs" />
+    <Compile Include="TypeConverter.cs" />
+    <Compile Include="UrlAuthorizationConfig.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="ValidateCode.cs" />
+    <Compile Include="WebBaseProxy.cs" />
+    <Compile Include="WebUtils.cs" />
+    <Compile Include="WordHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ObjectModels\ObjectModels.csproj">
+      <Project>{c8abc587-f714-404f-a3da-83ff5d128d3f}</Project>
+      <Name>ObjectModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MSSQLHelper\MSSQLHelper.csproj">
+      <Project>{b882f304-b17a-4db2-a938-3a0d92f3dd57}</Project>
+      <Name>MSSQLHelper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

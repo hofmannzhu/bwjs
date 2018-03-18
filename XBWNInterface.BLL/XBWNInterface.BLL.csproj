@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{627D9C3F-8BB7-4C68-AFBC-E6DB57D9DA32}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XBWNInterface.BLL</RootNamespace>
+    <AssemblyName>XBWNInterface.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Build.Utilities.v4.0" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="TestCookie.cs" />
+    <Compile Include="LoanInterface.cs" />
+    <Compile Include="ILog.cs" />
+    <Compile Include="NewLoanInterface.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BWJS.AppCode\BWJS.AppCode.csproj">
+      <Project>{5e930246-56ee-484a-829f-ae91bb258882}</Project>
+      <Name>BWJS.AppCode</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BWJS.BLL\BWJS.BLL.csproj">
+      <Project>{fdedc76d-5bb4-4a07-9cd8-14fc0fe3bf4a}</Project>
+      <Name>BWJS.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BWJS.Model\BWJS.Model.csproj">
+      <Project>{221aa85c-c8e4-4f2b-ac0c-382bdd8f6052}</Project>
+      <Name>BWJS.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BWJSLog.BLL\BWJSLog.BLL.csproj">
+      <Project>{806120a4-77da-4311-b3de-87aea78168fc}</Project>
+      <Name>BWJSLog.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BWJSLog.Model\BWJSLog.Model.csproj">
+      <Project>{587469c2-9993-46d7-a3af-4e8b70404060}</Project>
+      <Name>BWJSLog.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityHelper\UtilityHelper.csproj">
+      <Project>{b9381b8a-312d-4953-ae06-3f2b5c22480a}</Project>
+      <Name>UtilityHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XBWN.DAL\XBWN.DAL.csproj">
+      <Project>{55d1bbc1-ce19-4870-b48e-49e99360c18f}</Project>
+      <Name>XBWN.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XBWN.Model\XBWN.Model.csproj">
+      <Project>{872adba6-3c6d-46a3-aa00-daf6286ec5e4}</Project>
+      <Name>XBWN.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XBWNInterface.Model\XBWNInterface.Model.csproj">
+      <Project>{ea32030c-795d-404b-aa97-e959d1edb5ab}</Project>
+      <Name>XBWNInterface.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,1831 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7FCE31E0-44A5-4A19-A1EB-CDAD5B085591}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BWJS.WebApp</RootNamespace>
+    <AssemblyName>BWJS.WebApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.1.2.3\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.1.2.3\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.1.2.3\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.1.2.3\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.1.2.3\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=1.2.3.490, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.1.2.3\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NVelocity, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\NVelocity.1.0.3\lib\NVelocity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Device" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.0.0\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.10.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\AddPhoneNumber.aspx" />
+    <Content Include="Account\Confirm.aspx" />
+    <Content Include="Account\Forgot.aspx" />
+    <Content Include="Account\Lockout.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Manage.aspx" />
+    <Content Include="Account\ManageLogins.aspx" />
+    <Content Include="Account\ManagePassword.aspx" />
+    <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="Account\ResetPassword.aspx" />
+    <Content Include="Account\ResetPasswordConfirmation.aspx" />
+    <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
+    <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Admin\AdPositionAdd.aspx" />
+    <Content Include="Admin\AdPositionList.aspx" />
+    <Content Include="Admin\AdReleaseAdd.aspx" />
+    <Content Include="Admin\AdReleaseList.aspx" />
+    <Content Include="Admin\BinDingUsersMachine.aspx" />
+    <Content Include="Admin\CheckUMachine.aspx" />
+    <Content Include="Admin\CompanyAdd.aspx" />
+    <Content Include="Admin\CompanyList.aspx" />
+    <Content Include="Admin\CompanyRelationAdd.aspx" />
+    <Content Include="Admin\CompanyRelationList.aspx" />
+    <Content Include="Admin\default.aspx" />
+    <Content Include="Admin\DepartmentInfoAdd.aspx" />
+    <Content Include="Admin\DepartmentInfoList.aspx" />
+    <Content Include="Admin\EquipmentAdd.aspx" />
+    <Content Include="Admin\EquipmentList.aspx" />
+    <Content Include="Admin\FunctionAdd.aspx" />
+    <Content Include="Admin\FunctionList.aspx" />
+    <Content Include="Admin\IdentityCardLibraryList.aspx" />
+    <Content Include="Admin\LoginOut.aspx" />
+    <Content Include="Admin\MachineSupplierAdd.aspx" />
+    <Content Include="Admin\MachineSupplierList.aspx" />
+    <Content Include="Admin\NetLoanApplyList.aspx" />
+    <Content Include="Admin\OrderCancelList.aspx" />
+    <Content Include="Admin\OrderCheck.aspx" />
+    <Content Include="Admin\OrderImport.aspx" />
+    <Content Include="Admin\OrderRebateInfo.aspx" />
+    <Content Include="Admin\OrderPayApplyList.aspx" />
+    <Content Include="Admin\OrderRebateInfoList.aspx" />
+    <Content Include="Admin\RoleAdd.aspx" />
+    <Content Include="Admin\RoleInfoList.aspx" />
+    <Content Include="Admin\RRoleFunction.aspx" />
+    <Content Include="Admin\RUserDepartment.aspx" />
+    <Content Include="Admin\RUserRole.aspx" />
+    <Content Include="Admin\SettlementApply.aspx" />
+    <Content Include="Admin\SettlementList.aspx" />
+    <Content Include="Admin\SiteSecurity.aspx" />
+    <Content Include="Admin\SmsSendList.aspx" />
+    <Content Include="Admin\SupplierInfoAdd.aspx" />
+    <Content Include="Admin\SupplierInfoList.aspx" />
+    <Content Include="Admin\SysConfigList.aspx" />
+    <Content Include="Admin\UserBankAdd.aspx" />
+    <Content Include="Admin\UserBankList.aspx" />
+    <Content Include="Admin\UserBankListForUserManager.aspx" />
+    <Content Include="Admin\UserManagerAdd.aspx" />
+    <Content Include="Admin\UserManagerInfoList.aspx" />
+    <Content Include="Admin\UserUpdatepwd.aspx" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="Content\css\Admin\font-awesome.min.css" />
+    <Content Include="Content\css\Admin\main.css" />
+    <Content Include="Content\css\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\css\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\css\king-table.css" />
+    <Content Include="Content\css\list-style.css" />
+    <Content Include="Content\css\Mofang\font-awesome.min.css" />
+    <Content Include="Content\css\Mofang\main.css" />
+    <Content Include="Content\css\Mofang\templatemo_style.css" />
+    <Content Include="Content\css\NewSSKD\bootstrap.min.css" />
+    <Content Include="Content\css\NewSSKD\easyui.css" />
+    <Content Include="Content\css\NewSSKD\jquery-ui.css" />
+    <Content Include="Content\css\NewSSKD\email.css" />
+    <Content Include="Content\css\NewSSKD\main.css" />
+    <Content Include="Content\css\NewSSKD\userReport.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\images\asc.gif" />
+    <Content Include="Content\images\bg.gif" />
+    <Content Include="Content\images\desc.gif" />
+    <Content Include="Content\images\sort_asc.png" />
+    <Content Include="Content\images\sort_both.png" />
+    <Content Include="Content\images\sort_desc.png" />
+    <Content Include="Content\img\Admin\gg1.jpg" />
+    <Content Include="Content\img\Admin\homebg2.jpg" />
+    <Content Include="Content\img\Admin\people.png" />
+    <Content Include="Content\img\Admin\people2.png" />
+    <Content Include="Content\img\Admin\people3.png" />
+    <Content Include="Content\img\Bank\logo-xyk1.jpg" />
+    <Content Include="Content\img\Bank\logo-xyk2.jpg" />
+    <Content Include="Content\img\Bank\logo-xyk3.jpg" />
+    <Content Include="Content\img\Bank\logo-xyk4.jpg" />
+    <Content Include="Content\img\BWJS\android.png" />
+    <Content Include="Content\img\BWJS\ios.png" />
+    <Content Include="Content\img\cqg.png" />
+    <Content Include="Content\img\default\icon-ext.png" />
+    <Content Include="Content\img\default\icon.png" />
+    <Content Include="Content\img\default\layer.css" />
+    <Content Include="Content\img\default\loading-0.gif" />
+    <Content Include="Content\img\default\loading-1.gif" />
+    <Content Include="Content\img\default\loading-2.gif" />
+    <Content Include="Content\img\dynamicloding.gif" />
+    <Content Include="Content\img\loading.gif" />
+    <Content Include="Content\img\loadingsmall.gif" />
+    <Content Include="Content\img\Mofang\back-dot.png" />
+    <Content Include="Content\img\Mofang\bg-mask1.png" />
+    <Content Include="Content\img\Mofang\bg-page.png" />
+    <Content Include="Content\img\Mofang\bg-white.png" />
+    <Content Include="Content\img\Mofang\body-bg1.jpg" />
+    <Content Include="Content\img\Mofang\body-bg6.jpg" />
+    <Content Include="Content\img\Mofang\body-bg2.jpg" />
+    <Content Include="Content\img\Mofang\body-bg3.jpg" />
+    <Content Include="Content\img\Mofang\body-bg4.jpg" />
+    <Content Include="Content\img\Mofang\body-bg5.jpg" />
+    <Content Include="Content\img\Mofang\body-bg0.jpg" />
+    <Content Include="Content\img\Mofang\btn-blue-bg.png" />
+    <Content Include="Content\img\Mofang\btn-feng-bg.png" />
+    <Content Include="Content\img\Mofang\btn-green-bg.png" />
+    <Content Include="Content\img\Mofang\btn-qf-bg.png" />
+    <Content Include="Content\img\Mofang\btn-red-bg.png" />
+    <Content Include="Content\img\Mofang\df-pho.jpg" />
+    <Content Include="Content\img\Mofang\do1.jpg" />
+    <Content Include="Content\img\Mofang\do2.jpg" />
+    <Content Include="Content\img\Mofang\do3.jpg" />
+    <Content Include="Content\img\Mofang\do4.jpg" />
+    <Content Include="Content\img\Mofang\do5.jpg" />
+    <Content Include="Content\img\Mofang\index-bg.jpg" />
+    <Content Include="Content\img\Mofang\jiacaixian3.jpg" />
+    <Content Include="Content\img\Mofang\jiankangxian3.jpg" />
+    <Content Include="Content\img\Mofang\leftmenu-bg.png" />
+    <Content Include="Content\img\Mofang\logo-wd1.jpg" />
+    <Content Include="Content\img\Mofang\logo-wd2.jpg" />
+    <Content Include="Content\img\Mofang\logo-wd3.jpg" />
+    <Content Include="Content\img\Mofang\logo-wd4.jpg" />
+    <Content Include="Content\img\Mofang\logo-wd5.jpg" />
+    <Content Include="Content\img\Mofang\logo-wd6.jpg" />
+    <Content Include="Content\img\Mofang\logo-wd7.jpg" />
+    <Content Include="Content\img\Mofang\logo-xyk1.jpg" />
+    <Content Include="Content\img\Mofang\lvyouxian3.jpg" />
+    <Content Include="Content\img\Mofang\mask-bg.png" />
+    <Content Include="Content\img\Mofang\mr.jpg" />
+    <Content Include="Content\img\Mofang\mr2.jpg" />
+    <Content Include="Content\img\Mofang\MyCamera.swf" />
+    <Content Include="Content\img\Mofang\pic1.jpg" />
+    <Content Include="Content\img\Mofang\pic10.jpg" />
+    <Content Include="Content\img\Mofang\pic11.jpg" />
+    <Content Include="Content\img\Mofang\pic12.jpg" />
+    <Content Include="Content\img\Mofang\pic2.jpg" />
+    <Content Include="Content\img\Mofang\pic3.jpg" />
+    <Content Include="Content\img\Mofang\pic4.jpg" />
+    <Content Include="Content\img\Mofang\pic5.jpg" />
+    <Content Include="Content\img\Mofang\pic6.jpg" />
+    <Content Include="Content\img\Mofang\qichexian.jpg" />
+    <Content Include="Content\img\Mofang\renshouxian.jpg" />
+    <Content Include="Content\img\Mofang\sfzf.jpg" />
+    <Content Include="Content\img\Mofang\sfzz.jpg" />
+    <Content Include="Content\img\Mofang\wdlogo1.jpg" />
+    <Content Include="Content\img\Mofang\wenpic.png" />
+    <Content Include="Content\img\Mofang\yh1.jpg" />
+    <Content Include="Content\img\Mofang\yh10.jpg" />
+    <Content Include="Content\img\Mofang\yh12.jpg" />
+    <Content Include="Content\img\Mofang\yh2.jpg" />
+    <Content Include="Content\img\Mofang\yh3.jpg" />
+    <Content Include="Content\img\Mofang\yh4.jpg" />
+    <Content Include="Content\img\Mofang\yh5.jpg" />
+    <Content Include="Content\img\Mofang\yh6.jpg" />
+    <Content Include="Content\img\Mofang\yh7.jpg" />
+    <Content Include="Content\img\Mofang\yh8.jpg" />
+    <Content Include="Content\img\Mofang\yh9.jpg" />
+    <Content Include="Content\img\Mofang\yiliaoxian3.jpg" />
+    <Content Include="Content\img\Mofang\yiwaixian3.jpg" />
+    <Content Include="Content\img\NetLoan\default.jpg" />
+    <Content Include="Content\img\NetLoan\logo-wd10.jpg" />
+    <Content Include="Content\img\NetLoan\logo-wd11.jpg" />
+    <Content Include="Content\img\NetLoan\logo-wd12.jpg" />
+    <Content Include="Content\img\NetLoan\logo-wd13.jpg" />
+    <Content Include="Content\img\NetLoan\logo-wd3.jpg" />
+    <Content Include="Content\img\NetLoan\logo-wd4.jpg" />
+    <Content Include="Content\img\NetLoan\logo-wd5.jpg" />
+    <Content Include="Content\img\NetLoan\logo-wd6.jpg" />
+    <Content Include="Content\img\NetLoan\logo-wd7.jpg" />
+    <Content Include="Content\img\NetLoan\logo-wd8.jpg" />
+    <Content Include="Content\img\NetLoan\logo-wd9.jpg" />
+    <Content Include="Content\img\NetLoan\ppdqmqb.png" />
+    <Content Include="Content\img\NetLoan\text-img.png" />
+    <Content Include="Content\img\NewSSKD\bg-mask1.png" />
+    <Content Include="Content\img\NewSSKD\bg-mask2.png" />
+    <Content Include="Content\img\NewSSKD\dot-sq.png" />
+    <Content Include="Content\img\NewSSKD\dot-sqz.png" />
+    <Content Include="Content\img\NewSSKD\dot.png" />
+    <Content Include="Content\img\NewSSKD\ewm.jpg" />
+    <Content Include="Content\img\NewSSKD\face-photo.png" />
+    <Content Include="Content\img\NewSSKD\head-success-dot.png" />
+    <Content Include="Content\img\NewSSKD\home-bg.jpg" />
+    <Content Include="Content\img\NewSSKD\home-bg2.jpg" />
+    <Content Include="Content\img\NewSSKD\home-dot-bg1.jpg" />
+    <Content Include="Content\img\NewSSKD\home-dot-bg1.png" />
+    <Content Include="Content\img\NewSSKD\home-dot-bg2.png" />
+    <Content Include="Content\img\NewSSKD\home-dot-bg3.png" />
+    <Content Include="Content\img\NewSSKD\home-dot-bg4.png" />
+    <Content Include="Content\img\NewSSKD\home-dot1.png" />
+    <Content Include="Content\img\NewSSKD\home-dot2.png" />
+    <Content Include="Content\img\NewSSKD\home-dot3.png" />
+    <Content Include="Content\img\NewSSKD\home-dot4.png" />
+    <Content Include="Content\img\NewSSKD\iconNumber.png" />
+    <Content Include="Content\img\NewSSKD\iconNumber01.png" />
+    <Content Include="Content\img\NewSSKD\kf.jpg" />
+    <Content Include="Content\img\NewSSKD\loading.gif" />
+    <Content Include="Content\img\NewSSKD\mima.png" />
+    <Content Include="Content\img\NewSSKD\over1.png" />
+    <Content Include="Content\img\NewSSKD\over2.png" />
+    <Content Include="Content\img\NewSSKD\over3.png" />
+    <Content Include="Content\img\NewSSKD\over4.png" />
+    <Content Include="Content\img\NewSSKD\pic-jg.jpg" />
+    <Content Include="Content\img\NewSSKD\rl1.png" />
+    <Content Include="Content\img\NewSSKD\rl2.png" />
+    <Content Include="Content\img\NewSSKD\sel-dot.jpg" />
+    <Content Include="Content\img\NewSSKD\sel-dot.png" />
+    <Content Include="Content\img\NewSSKD\sel-dot1.png" />
+    <Content Include="Content\img\NewSSKD\sel-ok.png" />
+    <Content Include="Content\img\NewSSKD\sfzdot.png" />
+    <Content Include="Content\img\NewSSKD\sq-dot1.png" />
+    <Content Include="Content\img\NewSSKD\sq-dot10.png" />
+    <Content Include="Content\img\NewSSKD\sq-dot2.png" />
+    <Content Include="Content\img\NewSSKD\sq-dot3.png" />
+    <Content Include="Content\img\NewSSKD\sq-dot4.png" />
+    <Content Include="Content\img\NewSSKD\sq-dot5.png" />
+    <Content Include="Content\img\NewSSKD\sq-dot6.png" />
+    <Content Include="Content\img\NewSSKD\sq-dot7.png" />
+    <Content Include="Content\img\NewSSKD\sq-dot8.png" />
+    <Content Include="Content\img\NewSSKD\sq-dot9.png" />
+    <Content Include="Content\img\NewSSKD\tab-bg-blue.jpg" />
+    <Content Include="Content\img\NewSSKD\tab-bg-red.jpg" />
+    <Content Include="Content\img\NewSSKD\tab-dot1.png" />
+    <Content Include="Content\img\NewSSKD\tab-dot2.png" />
+    <Content Include="Content\img\NewSSKD\tab-dot3.png" />
+    <Content Include="Content\img\NewSSKD\tab-dot4.png" />
+    <Content Include="Content\img\NewSSKD\tab-dot5.png" />
+    <Content Include="Content\img\NewSSKD\tab-dot6.png" />
+    <Content Include="Content\img\NewSSKD\yhm.png" />
+    <Content Include="Content\img\QRCode\minshengyinhang.jpg" />
+    <Content Include="Content\img\QRCode\shandiandai.png" />
+    <Content Include="Content\zTree\zTree.css" />
+    <Content Include="Content\zTree\zTreeStyle\img\diy\1_close.png" />
+    <Content Include="Content\zTree\zTreeStyle\img\diy\1_open.png" />
+    <Content Include="Content\zTree\zTreeStyle\img\diy\2.png" />
+    <Content Include="Content\zTree\zTreeStyle\img\diy\3.png" />
+    <Content Include="Content\zTree\zTreeStyle\img\diy\4.png" />
+    <Content Include="Content\zTree\zTreeStyle\img\diy\5.png" />
+    <Content Include="Content\zTree\zTreeStyle\img\diy\6.png" />
+    <Content Include="Content\zTree\zTreeStyle\img\diy\7.png" />
+    <Content Include="Content\zTree\zTreeStyle\img\diy\8.png" />
+    <Content Include="Content\zTree\zTreeStyle\img\diy\9.png" />
+    <Content Include="Content\zTree\zTreeStyle\img\line_conn.gif" />
+    <Content Include="Content\zTree\zTreeStyle\img\loading.gif" />
+    <Content Include="Content\zTree\zTreeStyle\img\zTreeStandard.gif" />
+    <Content Include="Content\zTree\zTreeStyle\img\zTreeStandard.png" />
+    <Content Include="Content\zTree\zTreeStyle\zTreeStyle.css" />
+    <Content Include="default.aspx" />
+    <Content Include="DoubleScreen\Index.aspx" />
+    <Content Include="loanprotocol.html" />
+    <Content Include="Mofang\NoticeInsurance.aspx" />
+    <Content Include="Mofang\PayResult.aspx" />
+    <Content Include="Mofang\ProductDetail.aspx" />
+    <Content Include="Product\consulttest.aspx" />
+    <Content Include="Product\HomePage.aspx" />
+    <Content Include="Product\Index.aspx" />
+    <Content Include="Product\NetLoanApply.aspx" />
+    <Content Include="Product\NetLoanMiddlePage.aspx" />
+    <Content Include="Product\NetLoanPlatform.aspx" />
+    <Content Include="Product\NewSSKD\AddBankCard.aspx" />
+    <Content Include="Product\NewSSKD\ApplyForConfirmation.aspx" />
+    <Content Include="Product\NewSSKD\AuthorizationCertification.aspx" />
+    <Content Include="Product\NewSSKD\ClosePage.aspx" />
+    <Content Include="Product\NewSSKD\ExtractTheAmount.aspx" />
+    <Content Include="Product\NewSSKD\FillInTheInformation.aspx" />
+    <Content Include="Product\NewSSKD\housingLoan.aspx" />
+    <Content Include="Product\NewSSKD\Index.aspx" />
+    <Content Include="Product\NewSSKD\LendingToConfirm.aspx" />
+    <Content Include="Product\NewSSKD\LikeToCollect.aspx" />
+    <Content Include="Product\NewSSKD\LineOfCredit.aspx" />
+    <Content Include="Product\NewSSKD\ReportDemo.html" />
+    <Content Include="Product\NewSSKD\ReportDetail.html" />
+    <Content Include="Product\NewSSKD\SignIn.aspx" />
+    <Content Include="Product\NewSSKD\TheAppraisalReport.aspx" />
+    <Content Include="Product\NewSSKD\ToApplyForALoan.aspx" />
+    <Content Include="Product\NewSSKD\xy.html" />
+    <Content Include="Product\ProductList.aspx" />
+    <Content Include="Product\SSKDApply.aspx" />
+    <Content Include="Scripts\Admin\leftmenu.js" />
+    <Content Include="Scripts\Admin\main.js" />
+    <Content Include="Content\css\Admin\templatemo_style.css" />
+    <Content Include="Content\img\Admin\bg-white.png" />
+    <Content Include="Content\img\Admin\icon-err.png" />
+    <Content Include="Content\img\Admin\icon-success.png" />
+    <Content Include="Content\img\Admin\logo.png" />
+    <Content Include="Content\img\Admin\mask-bg.png" />
+    <Content Include="Scripts\Admin\m1.js" />
+    <Content Include="Scripts\Admin\signin.js" />
+    <Content Include="Scripts\bootbox.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Admin\header.js" />
+    <Content Include="Content\jquery.dataTables.css" />
+    <Content Include="Scripts\extend\layer.ext.js" />
+    <Content Include="Scripts\IDCard\baseISSObject.js" />
+    <Content Include="Scripts\IDCard\baseISSOnline.js" />
+    <Content Include="Scripts\IDCard\common.js" />
+    <Content Include="Scripts\IDCard\jquery.jBox-2.3.min.js" />
+    <Content Include="Scripts\inputmail.js" />
+    <Content Include="Scripts\jquery-2.2.2.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery.autocomplete.js" />
+    <Content Include="Scripts\jquery.cookie.js" />
+    <Content Include="Scripts\jquery.dataTables.bootstrap.js" />
+    <Content Include="Scripts\jquery.dataTables.js" />
+    <Content Include="Scripts\jquery.formatDateTime\jquery.formatDateTime.js" />
+    <Content Include="Scripts\jquery.formatDateTime\jquery.formatDateTime.min.js" />
+    <Content Include="Scripts\jquery.mailAutoComplete-4.0.js" />
+    <Content Include="Scripts\jquery.query-2.1.7.js" />
+    <Content Include="Scripts\jquery.soChange-min.js" />
+    <Content Include="Scripts\king-table.js" />
+    <Content Include="Scripts\list-script.js" />
+    <Content Include="Scripts\messages_zh.min.js" />
+    <Content Include="Scripts\Mofang\mofanghealth.js" />
+    <Content Include="Scripts\Mofang\mofanghelper.js" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\jquery-form.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Admin\Login.aspx" />
+    <Content Include="AD\Index.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\bootstrap-theme.css" />
+    <Content Include="Content\css\bootstrap-theme.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\jquery.dataTables.css" />
+    <Content Include="Content\css\jquery.dataTables.min.css" />
+    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\mask-bg.png" />
+    <Content Include="Content\img\topbg.jpg" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Account\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Ajax\UsersLogin\HUsersLogin.ashx" />
+    <Content Include="Content\css\bootstrap-theme.css.map" />
+    <Content Include="Content\css\bootstrap-theme.min.css.map" />
+    <Content Include="Content\css\bootstrap.css.map" />
+    <Content Include="Content\css\bootstrap.min.css.map" />
+    <Content Include="Ajax\MofangOrder\OrderHandler.ashx" />
+    <Content Include="Ajax\Admin\UserManager.ashx" />
+    <Content Include="Ajax\Admin\HAdPosition.ashx" />
+    <Content Include="Ajax\Admin\HAdRelease.ashx" />
+    <Content Include="Ajax\MofangOrder\RestrictGenesHandler.ashx" />
+    <Content Include="Ajax\BWJS\HCityArea.ashx" />
+    <Content Include="Ajax\helper.ashx" />
+    <Content Include="Ajax\MofangOrder\HealthHandler.ashx" />
+    <Content Include="Index.aspx" />
+    <Content Include="Mofang\OrderApplys.aspx" />
+    <Content Include="Scripts\ai.0.15.0-build58334.js" />
+    <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="Scripts\jquery.dataTables.min.js" />
+    <Content Include="Scripts\jquery.form.js" />
+    <Content Include="Scripts\layer.js" />
+    <Content Include="Scripts\layer.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Mofang\mofanghelperjob.js" />
+    <Content Include="Scripts\MyCamera.swf" />
+    <Content Include="Scripts\NewSSKD\getLocation.js" />
+    <Content Include="Scripts\NewSSKD\FillInTheInformation.js" />
+    <Content Include="Scripts\NewSSKD\AssetInfo.js" />
+    <Content Include="Scripts\NewSSKD\banner.js" />
+    <Content Include="Scripts\NewSSKD\camera.js" />
+    <Content Include="Scripts\NewSSKD\base64.js" />
+    <Content Include="Scripts\NewSSKD\common.js" />
+    <Content Include="Scripts\NewSSKD\consultjs.js" />
+    <Content Include="Scripts\NewSSKD\housing.js" />
+    <Content Include="Scripts\NewSSKD\main.js" />
+    <Content Include="Scripts\NewSSKD\success.js" />
+    <Content Include="Scripts\pagecommon.js" />
+    <Content Include="Scripts\Photograph\html5media.min.js" />
+    <Content Include="Scripts\Photograph\html5shiv.min.js" />
+    <Content Include="Scripts\Pinyin\pinyinUtil.js" />
+    <Content Include="Scripts\Pinyin\pinyin_dict_polyphone.js" />
+    <Content Include="Scripts\Pinyin\pinyin_dict_withtone.js" />
+    <Content Include="Scripts\Product\heartbeatcheck.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\skin\default\icon_ext.png" />
+    <Content Include="Scripts\skin\default\textbg.png" />
+    <Content Include="Scripts\skin\default\xubox_ico0.png" />
+    <Content Include="Scripts\skin\default\xubox_loading0.gif" />
+    <Content Include="Scripts\skin\default\xubox_loading1.gif" />
+    <Content Include="Scripts\skin\default\xubox_loading2.gif" />
+    <Content Include="Scripts\skin\default\xubox_loading3.gif" />
+    <Content Include="Scripts\skin\default\xubox_title0.png" />
+    <Content Include="Scripts\skin\layer.css" />
+    <Content Include="Scripts\skin\layer.ext.css" />
+    <Content Include="Scripts\theme\default\icon-ext.png" />
+    <Content Include="Scripts\theme\default\icon.png" />
+    <Content Include="Scripts\theme\default\layer.css" />
+    <Content Include="Scripts\theme\default\loading-0.gif" />
+    <Content Include="Scripts\theme\default\loading-1.gif" />
+    <Content Include="Scripts\theme\default\loading-2.gif" />
+    <Content Include="Scripts\uril.js" />
+    <Content Include="Scripts\WdatePicker\calendar.js" />
+    <Content Include="Scripts\WdatePicker\config.js" />
+    <Content Include="Scripts\WdatePicker\lang\en.js" />
+    <Content Include="Scripts\WdatePicker\lang\zh-cn.js" />
+    <Content Include="Scripts\WdatePicker\lang\zh-tw.js" />
+    <Content Include="Scripts\WdatePicker\My97DatePicker.htm" />
+    <Content Include="Scripts\WdatePicker\readme.txt" />
+    <Content Include="Scripts\WdatePicker\skin\datePicker.gif" />
+    <Content Include="Scripts\WdatePicker\skin\default\datepicker.css" />
+    <Content Include="Scripts\WdatePicker\skin\default\down.jpg" />
+    <Content Include="Scripts\WdatePicker\skin\default\left.gif" />
+    <Content Include="Scripts\WdatePicker\skin\default\navLeft.gif" />
+    <Content Include="Scripts\WdatePicker\skin\default\navRight.gif" />
+    <Content Include="Scripts\WdatePicker\skin\default\qs.jpg" />
+    <Content Include="Scripts\WdatePicker\skin\default\right.gif" />
+    <Content Include="Scripts\WdatePicker\skin\default\up.jpg" />
+    <Content Include="Scripts\WdatePicker\skin\twoer\datepicker-dev.css" />
+    <Content Include="Scripts\WdatePicker\skin\twoer\datepicker.css" />
+    <Content Include="Scripts\WdatePicker\skin\twoer\img.gif" />
+    <Content Include="Scripts\WdatePicker\skin\twoer\img.png" />
+    <Content Include="Scripts\WdatePicker\skin\WdatePicker.css" />
+    <Content Include="Scripts\WdatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="Scripts\WdatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="Scripts\WdatePicker\skin\whyGreen\down.jpg" />
+    <Content Include="Scripts\WdatePicker\skin\whyGreen\left.gif" />
+    <Content Include="Scripts\WdatePicker\skin\whyGreen\navLeft.gif" />
+    <Content Include="Scripts\WdatePicker\skin\whyGreen\navRight.gif" />
+    <Content Include="Scripts\WdatePicker\skin\whyGreen\qs.jpg" />
+    <Content Include="Scripts\WdatePicker\skin\whyGreen\right.gif" />
+    <Content Include="Scripts\WdatePicker\skin\whyGreen\up.jpg" />
+    <Content Include="Scripts\WdatePicker\WdatePicker.js" />
+    <Content Include="Scripts\WdatePicker\WdatePicker.min.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Scripts\zTree\jquery.ztree.core-3.5.js" />
+    <Content Include="Scripts\zTree\jquery.ztree.core-3.5.min.js" />
+    <Content Include="Scripts\zTree\jquery.ztree.core-3.5.min.js.map" />
+    <Content Include="Scripts\zTree\jquery.ztree.excheck-3.5.js" />
+    <Content Include="Scripts\zTree\jquery.ztree.excheck-3.5.min.js" />
+    <Content Include="Scripts\zTree\jquery.ztree.excheck-3.5.min.js.map" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Site.Master" />
+    <Content Include="Test\a.aspx" />
+    <Content Include="Test\b.aspx" />
+    <Content Include="Test\camera\css\easyui.css" />
+    <Content Include="Test\camera\css\jquery-ui.css" />
+    <Content Include="Test\camera\js\jquery-2.2.2.js" />
+    <Content Include="Test\camera\js\jquery-ui.js" />
+    <Content Include="Test\camera\js\MyCamera.swf" />
+    <Content Include="Test\camera\view\camera.html" />
+    <Content Include="Test\ceshi.aspx" />
+    <Content Include="Test\ceshi20171229.aspx" />
+    <Content Include="Test\ceshi20180125.aspx" />
+    <Content Include="Test\ceshi20180131.aspx" />
+    <Content Include="Test\ceshi20180206.aspx" />
+    <Content Include="Test\ceshiHelper.aspx" />
+    <Content Include="Test\cfs\CfsA.aspx" />
+    <Content Include="Test\cfs\CfsB.aspx" />
+    <Content Include="Test\cfs\Kit.aspx" />
+    <Content Include="Test\Decrypt.aspx" />
+    <Content Include="Test\demo.aspx" />
+    <Content Include="Test\demoDataTable.aspx" />
+    <Content Include="Test\get.html" />
+    <Content Include="Test\h5.html" />
+    <Content Include="Test\camera\get.aspx" />
+    <Content Include="Test\camera\save.aspx" />
+    <Content Include="Test\HuaxuReadCard.html" />
+    <Content Include="Test\HuashiCVR3000.html" />
+    <Content Include="Test\job.aspx" />
+    <Content Include="Test\OpCookie.aspx" />
+    <Content Include="Test\rong360.aspx" />
+    <Content Include="Test\SSKDtest\LYtest\AssetInfo.aspx" />
+    <Content Include="Test\SSKDtest\LYtest\Consult.aspx" />
+    <Content Include="Test\SSKDtest\SYtest\SSKDAddBackCard.aspx" />
+    <Content Include="Test\textCity.aspx" />
+    <Content Include="Test\huashizuixin.html" />
+    <Content Include="Test\uploadSnap.aspx" />
+    <Content Include="UsersInfo\UsersLogin.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Bundle.config" />
+    <Content Include="packages.config" />
+    <Content Include="Content\css\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\css\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\css\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\css\fonts\FontAwesome.otf" />
+    <Content Include="Content\css\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\css\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\css\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\css\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Admin\m1.Master" />
+    <Content Include="Ajax\MofangOrder\CollectHandler.ashx" />
+    <Content Include="Ajax\Admin\HOrderRebate.ashx" />
+    <Content Include="Ajax\MofangOrder\HApplicantInfo.ashx" />
+    <Content Include="Ajax\MofangOrder\HInsurantInfo.ashx" />
+    <Content Include="Ajax\Admin\HFunction.ashx" />
+    <Content Include="Ajax\Admin\HRole.ashx" />
+    <Content Include="Ajax\Admin\HRoleFunction.ashx" />
+    <Content Include="Ajax\Admin\HDepartment.ashx" />
+    <Content Include="Ajax\Admin\HDepartmentInfo.ashx" />
+    <Content Include="Ajax\MofangOrder\ValidCode.ashx" />
+    <Content Include="Ajax\BWJS\HPageRefresh.ashx" />
+    <Content Include="Ajax\Admin\HRoleInfoUserDepartment.ashx" />
+    <Content Include="Ajax\Admin\HCompany.ashx" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Site.Mobile.Master" />
+    <Content Include="Scripts\WdatePicker\WdatePicker.min.js.map" />
+    <Content Include="Test\ceshiHelper.ashx" />
+    <Content Include="Test\demoHelper.ashx" />
+    <Content Include="Web-test.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web-test.Debug.config">
+      <DependentUpon>Web-test.config</DependentUpon>
+    </Content>
+    <Content Include="Web-test.Release.config">
+      <DependentUpon>Web-test.config</DependentUpon>
+    </Content>
+    <Content Include="Web-online.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web-online.Debug.config">
+      <DependentUpon>Web-online.config</DependentUpon>
+    </Content>
+    <Content Include="Web-online.Release.config">
+      <DependentUpon>Web-online.config</DependentUpon>
+    </Content>
+    <Content Include="Upload\渠道反馈模板.xls" />
+    <None Include="Properties\PublishProfiles\bwjsonline.pubxml" />
+    <None Include="Properties\PublishProfiles\bwjsonline39.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\AddPhoneNumber.aspx.cs">
+      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\AddPhoneNumber.aspx.designer.cs">
+      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Confirm.aspx.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Confirm.aspx.designer.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Forgot.aspx.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Forgot.aspx.designer.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Lockout.aspx.cs">
+      <DependentUpon>Lockout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Lockout.aspx.designer.cs">
+      <DependentUpon>Lockout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.designer.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ManageLogins.aspx.cs">
+      <DependentUpon>ManageLogins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ManageLogins.aspx.designer.cs">
+      <DependentUpon>ManageLogins.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ManagePassword.aspx.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ManagePassword.aspx.designer.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ResetPasswordConfirmation.aspx.cs">
+      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ResetPasswordConfirmation.aspx.designer.cs">
+      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.cs">
+      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.designer.cs">
+      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\VerifyPhoneNumber.aspx.cs">
+      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
+      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdPositionAdd.aspx.cs">
+      <DependentUpon>AdPositionAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdPositionAdd.aspx.designer.cs">
+      <DependentUpon>AdPositionAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdPositionList.aspx.cs">
+      <DependentUpon>AdPositionList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdPositionList.aspx.designer.cs">
+      <DependentUpon>AdPositionList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdReleaseAdd.aspx.cs">
+      <DependentUpon>AdReleaseAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdReleaseAdd.aspx.designer.cs">
+      <DependentUpon>AdReleaseAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdReleaseList.aspx.cs">
+      <DependentUpon>AdReleaseList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdReleaseList.aspx.designer.cs">
+      <DependentUpon>AdReleaseList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BinDingUsersMachine.aspx.cs">
+      <DependentUpon>BinDingUsersMachine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BinDingUsersMachine.aspx.designer.cs">
+      <DependentUpon>BinDingUsersMachine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CheckUMachine.aspx.cs">
+      <DependentUpon>CheckUMachine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CheckUMachine.aspx.designer.cs">
+      <DependentUpon>CheckUMachine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CompanyAdd.aspx.cs">
+      <DependentUpon>CompanyAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CompanyAdd.aspx.designer.cs">
+      <DependentUpon>CompanyAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CompanyList.aspx.cs">
+      <DependentUpon>CompanyList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CompanyList.aspx.designer.cs">
+      <DependentUpon>CompanyList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CompanyRelationAdd.aspx.cs">
+      <DependentUpon>CompanyRelationAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CompanyRelationAdd.aspx.designer.cs">
+      <DependentUpon>CompanyRelationAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CompanyRelationList.aspx.cs">
+      <DependentUpon>CompanyRelationList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CompanyRelationList.aspx.designer.cs">
+      <DependentUpon>CompanyRelationList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DepartmentInfoAdd.aspx.cs">
+      <DependentUpon>DepartmentInfoAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DepartmentInfoAdd.aspx.designer.cs">
+      <DependentUpon>DepartmentInfoAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DepartmentInfoList.aspx.cs">
+      <DependentUpon>DepartmentInfoList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DepartmentInfoList.aspx.designer.cs">
+      <DependentUpon>DepartmentInfoList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EquipmentAdd.aspx.cs">
+      <DependentUpon>EquipmentAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EquipmentAdd.aspx.designer.cs">
+      <DependentUpon>EquipmentAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EquipmentList.aspx.cs">
+      <DependentUpon>EquipmentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EquipmentList.aspx.designer.cs">
+      <DependentUpon>EquipmentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FunctionAdd.aspx.cs">
+      <DependentUpon>FunctionAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FunctionAdd.aspx.designer.cs">
+      <DependentUpon>FunctionAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FunctionList.aspx.cs">
+      <DependentUpon>FunctionList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FunctionList.aspx.designer.cs">
+      <DependentUpon>FunctionList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\IdentityCardLibraryList.aspx.cs">
+      <DependentUpon>IdentityCardLibraryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\IdentityCardLibraryList.aspx.designer.cs">
+      <DependentUpon>IdentityCardLibraryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\LoginOut.aspx.cs">
+      <DependentUpon>LoginOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\LoginOut.aspx.designer.cs">
+      <DependentUpon>LoginOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\m1.Master.cs">
+      <DependentUpon>m1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\m1.Master.designer.cs">
+      <DependentUpon>m1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MachineSupplierAdd.aspx.cs">
+      <DependentUpon>MachineSupplierAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MachineSupplierAdd.aspx.designer.cs">
+      <DependentUpon>MachineSupplierAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MachineSupplierList.aspx.cs">
+      <DependentUpon>MachineSupplierList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MachineSupplierList.aspx.designer.cs">
+      <DependentUpon>MachineSupplierList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\NetLoanApplyList.aspx.cs">
+      <DependentUpon>NetLoanApplyList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NetLoanApplyList.aspx.designer.cs">
+      <DependentUpon>NetLoanApplyList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrderCancelList.aspx.cs">
+      <DependentUpon>OrderCancelList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\OrderCancelList.aspx.designer.cs">
+      <DependentUpon>OrderCancelList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrderCheck.aspx.cs">
+      <DependentUpon>OrderCheck.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\OrderCheck.aspx.designer.cs">
+      <DependentUpon>OrderCheck.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrderImport.aspx.cs">
+      <DependentUpon>OrderImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\OrderImport.aspx.designer.cs">
+      <DependentUpon>OrderImport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrderRebateInfo.aspx.cs">
+      <DependentUpon>OrderRebateInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\OrderPayApplyList.aspx.cs">
+      <DependentUpon>OrderPayApplyList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\OrderRebateInfo.aspx.designer.cs">
+      <DependentUpon>OrderRebateInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrderPayApplyList.aspx.designer.cs">
+      <DependentUpon>OrderPayApplyList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrderRebateInfoList.aspx.cs">
+      <DependentUpon>OrderRebateInfoList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\OrderRebateInfoList.aspx.designer.cs">
+      <DependentUpon>OrderRebateInfoList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RoleAdd.aspx.cs">
+      <DependentUpon>RoleAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RoleAdd.aspx.designer.cs">
+      <DependentUpon>RoleAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RoleInfoList.aspx.cs">
+      <DependentUpon>RoleInfoList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RoleInfoList.aspx.designer.cs">
+      <DependentUpon>RoleInfoList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RRoleFunction.aspx.cs">
+      <DependentUpon>RRoleFunction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RRoleFunction.aspx.designer.cs">
+      <DependentUpon>RRoleFunction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RUserDepartment.aspx.cs">
+      <DependentUpon>RUserDepartment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RUserDepartment.aspx.designer.cs">
+      <DependentUpon>RUserDepartment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RUserRole.aspx.cs">
+      <DependentUpon>RUserRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RUserRole.aspx.designer.cs">
+      <DependentUpon>RUserRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SettlementApply.aspx.cs">
+      <DependentUpon>SettlementApply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SettlementApply.aspx.designer.cs">
+      <DependentUpon>SettlementApply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SettlementList.aspx.cs">
+      <DependentUpon>SettlementList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SettlementList.aspx.designer.cs">
+      <DependentUpon>SettlementList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SiteSecurity.aspx.cs">
+      <DependentUpon>SiteSecurity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SiteSecurity.aspx.designer.cs">
+      <DependentUpon>SiteSecurity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SmsSendList.aspx.cs">
+      <DependentUpon>SmsSendList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SmsSendList.aspx.designer.cs">
+      <DependentUpon>SmsSendList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SupplierInfoAdd.aspx.cs">
+      <DependentUpon>SupplierInfoAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SupplierInfoAdd.aspx.designer.cs">
+      <DependentUpon>SupplierInfoAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SupplierInfoList.aspx.cs">
+      <DependentUpon>SupplierInfoList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SupplierInfoList.aspx.designer.cs">
+      <DependentUpon>SupplierInfoList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SysConfigList.aspx.cs">
+      <DependentUpon>SysConfigList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SysConfigList.aspx.designer.cs">
+      <DependentUpon>SysConfigList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserBankAdd.aspx.cs">
+      <DependentUpon>UserBankAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserBankAdd.aspx.designer.cs">
+      <DependentUpon>UserBankAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserBankList.aspx.cs">
+      <DependentUpon>UserBankList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserBankList.aspx.designer.cs">
+      <DependentUpon>UserBankList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserBankListForUserManager.aspx.cs">
+      <DependentUpon>UserBankListForUserManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserBankListForUserManager.aspx.designer.cs">
+      <DependentUpon>UserBankListForUserManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserManagerAdd.aspx.cs">
+      <DependentUpon>UserManagerAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserManagerAdd.aspx.designer.cs">
+      <DependentUpon>UserManagerAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserManagerInfoList.aspx.cs">
+      <DependentUpon>UserManagerInfoList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserManagerInfoList.aspx.designer.cs">
+      <DependentUpon>UserManagerInfoList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserUpdatepwd.aspx.cs">
+      <DependentUpon>UserUpdatepwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserUpdatepwd.aspx.designer.cs">
+      <DependentUpon>UserUpdatepwd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\Admin\HAdPosition.ashx.cs">
+      <DependentUpon>HAdPosition.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\Admin\HAdRelease.ashx.cs">
+      <DependentUpon>HAdRelease.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\Admin\HCompany.ashx.cs">
+      <DependentUpon>HCompany.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\Admin\HDepartment.ashx.cs">
+      <DependentUpon>HDepartment.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\Admin\HDepartmentInfo.ashx.cs">
+      <DependentUpon>HDepartmentInfo.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\Admin\HFunction.ashx.cs">
+      <DependentUpon>HFunction.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\Admin\HOrderRebate.ashx.cs">
+      <DependentUpon>HOrderRebate.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\Admin\HRole.ashx.cs">
+      <DependentUpon>HRole.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\Admin\HRoleFunction.ashx.cs">
+      <DependentUpon>HRoleFunction.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\Admin\HRoleInfoUserDepartment.ashx.cs">
+      <DependentUpon>HRoleInfoUserDepartment.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\Admin\UserManager.ashx.cs">
+      <DependentUpon>UserManager.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\BWJS\HCityArea.ashx.cs">
+      <DependentUpon>HCityArea.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\BWJS\HPageRefresh.ashx.cs">
+      <DependentUpon>HPageRefresh.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\helper.ashx.cs">
+      <DependentUpon>helper.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\Helper\BWJSDisptcher.cs" />
+    <Compile Include="Ajax\Helper\BWJS\BWJSDispatcherServices.cs" />
+    <Compile Include="Ajax\Helper\BWJS\IFunction.cs" />
+    <Compile Include="Ajax\Helper\BWJS\INewNetLoan.cs" />
+    <Compile Include="Ajax\Helper\BWJS\IProduct.cs" />
+    <Compile Include="Ajax\Helper\BWJS\ISettlement.cs" />
+    <Compile Include="Ajax\Helper\BWJS\IHeartbeat.cs" />
+    <Compile Include="Ajax\Helper\BWJS\ILeftMenu.cs" />
+    <Compile Include="Ajax\Helper\BWJS\INetLoan.cs" />
+    <Compile Include="Ajax\Helper\BWJS\ITest.cs" />
+    <Compile Include="Ajax\Helper\BWJS\IGL.cs" />
+    <Compile Include="Ajax\Helper\Mofang\IJob.cs" />
+    <Compile Include="Ajax\Helper\Mofang\MofangDispatcherServices.cs" />
+    <Compile Include="Ajax\Helper\Mofang\IRegion.cs" />
+    <Compile Include="Ajax\MofangOrder\CollectHandler.ashx.cs">
+      <DependentUpon>CollectHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\MofangOrder\HApplicantInfo.ashx.cs">
+      <DependentUpon>HApplicantInfo.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\MofangOrder\HealthHandler.ashx.cs">
+      <DependentUpon>HealthHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\MofangOrder\HInsurantInfo.ashx.cs">
+      <DependentUpon>HInsurantInfo.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\MofangOrder\OrderHandler.ashx.cs">
+      <DependentUpon>OrderHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="AD\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AD\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\MofangOrder\RestrictGenesHandler.ashx.cs">
+      <DependentUpon>RestrictGenesHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\MofangOrder\ValidCode.ashx.cs">
+      <DependentUpon>ValidCode.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\UsersLogin\HUsersLogin.ashx.cs">
+      <DependentUpon>HUsersLogin.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DoubleScreen\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DoubleScreen\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Mofang\NoticeInsurance.aspx.cs">
+      <DependentUpon>NoticeInsurance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mofang\NoticeInsurance.aspx.designer.cs">
+      <DependentUpon>NoticeInsurance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mofang\OrderApplys.aspx.cs">
+      <DependentUpon>OrderApplys.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mofang\OrderApplys.aspx.designer.cs">
+      <DependentUpon>OrderApplys.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mofang\PayResult.aspx.cs">
+      <DependentUpon>PayResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mofang\PayResult.aspx.designer.cs">
+      <DependentUpon>PayResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mofang\ProductDetail.aspx.cs">
+      <DependentUpon>ProductDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mofang\ProductDetail.aspx.designer.cs">
+      <DependentUpon>ProductDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\consulttest.aspx.cs">
+      <DependentUpon>consulttest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\consulttest.aspx.designer.cs">
+      <DependentUpon>consulttest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\HomePage.aspx.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\HomePage.aspx.designer.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\NetLoanApply.aspx.cs">
+      <DependentUpon>NetLoanApply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\NetLoanApply.aspx.designer.cs">
+      <DependentUpon>NetLoanApply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\NetLoanMiddlePage.aspx.cs">
+      <DependentUpon>NetLoanMiddlePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\NetLoanMiddlePage.aspx.designer.cs">
+      <DependentUpon>NetLoanMiddlePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\NetLoanPlatform.aspx.cs">
+      <DependentUpon>NetLoanPlatform.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\NetLoanPlatform.aspx.designer.cs">
+      <DependentUpon>NetLoanPlatform.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\NewSSKD\AddBankCard.aspx.cs">
+      <DependentUpon>AddBankCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\NewSSKD\AddBankCard.aspx.designer.cs">
+      <DependentUpon>AddBankCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\NewSSKD\ApplyForConfirmation.aspx.cs">
+      <DependentUpon>ApplyForConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\NewSSKD\ApplyForConfirmation.aspx.designer.cs">
+      <DependentUpon>ApplyForConfirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\NewSSKD\AuthorizationCertification.aspx.cs">
+      <DependentUpon>AuthorizationCertification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\NewSSKD\AuthorizationCertification.aspx.designer.cs">
+      <DependentUpon>AuthorizationCertification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\NewSSKD\ClosePage.aspx.cs">
+      <DependentUpon>ClosePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\NewSSKD\ClosePage.aspx.designer.cs">
+      <DependentUpon>ClosePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\NewSSKD\ExtractTheAmount.aspx.cs">
+      <DependentUpon>ExtractTheAmount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\NewSSKD\ExtractTheAmount.aspx.designer.cs">
+      <DependentUpon>ExtractTheAmount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\NewSSKD\FillInTheInformation.aspx.cs">
+      <DependentUpon>FillInTheInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\NewSSKD\FillInTheInformation.aspx.designer.cs">
+      <DependentUpon>FillInTheInformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\NewSSKD\housingLoan.aspx.cs">
+      <DependentUpon>housingLoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\NewSSKD\housingLoan.aspx.designer.cs">
+      <DependentUpon>housingLoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\NewSSKD\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\NewSSKD\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\NewSSKD\LendingToConfirm.aspx.cs">
+      <DependentUpon>LendingToConfirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\NewSSKD\LendingToConfirm.aspx.designer.cs">
+      <DependentUpon>LendingToConfirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\NewSSKD\LikeToCollect.aspx.cs">
+      <DependentUpon>LikeToCollect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\NewSSKD\LikeToCollect.aspx.designer.cs">
+      <DependentUpon>LikeToCollect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\NewSSKD\LineOfCredit.aspx.cs">
+      <DependentUpon>LineOfCredit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\NewSSKD\LineOfCredit.aspx.designer.cs">
+      <DependentUpon>LineOfCredit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\NewSSKD\SignIn.aspx.cs">
+      <DependentUpon>SignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\NewSSKD\SignIn.aspx.designer.cs">
+      <DependentUpon>SignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\NewSSKD\TheAppraisalReport.aspx.cs">
+      <DependentUpon>TheAppraisalReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\NewSSKD\TheAppraisalReport.aspx.designer.cs">
+      <DependentUpon>TheAppraisalReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\NewSSKD\ToApplyForALoan.aspx.cs">
+      <DependentUpon>ToApplyForALoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\NewSSKD\ToApplyForALoan.aspx.designer.cs">
+      <DependentUpon>ToApplyForALoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\ProductList.aspx.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\ProductList.aspx.designer.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\SSKDApply.aspx.cs">
+      <DependentUpon>SSKDApply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\SSKDApply.aspx.designer.cs">
+      <DependentUpon>SSKDApply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="Test\a.aspx.cs">
+      <DependentUpon>a.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\a.aspx.designer.cs">
+      <DependentUpon>a.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\b.aspx.cs">
+      <DependentUpon>b.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\b.aspx.designer.cs">
+      <DependentUpon>b.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\ceshi.aspx.cs">
+      <DependentUpon>ceshi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\ceshi.aspx.designer.cs">
+      <DependentUpon>ceshi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\ceshi20171229.aspx.cs">
+      <DependentUpon>ceshi20171229.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\ceshi20171229.aspx.designer.cs">
+      <DependentUpon>ceshi20171229.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\ceshi20180125.aspx.cs">
+      <DependentUpon>ceshi20180125.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\ceshi20180125.aspx.designer.cs">
+      <DependentUpon>ceshi20180125.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\ceshi20180131.aspx.cs">
+      <DependentUpon>ceshi20180131.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\ceshi20180131.aspx.designer.cs">
+      <DependentUpon>ceshi20180131.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\ceshi20180206.aspx.cs">
+      <DependentUpon>ceshi20180206.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\ceshi20180206.aspx.designer.cs">
+      <DependentUpon>ceshi20180206.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\ceshiHelper.ashx.cs">
+      <DependentUpon>ceshiHelper.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\ceshiHelper.aspx.cs">
+      <DependentUpon>ceshiHelper.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\ceshiHelper.aspx.designer.cs">
+      <DependentUpon>ceshiHelper.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\cfs\CfsA.aspx.cs">
+      <DependentUpon>CfsA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\cfs\CfsA.aspx.designer.cs">
+      <DependentUpon>CfsA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\cfs\CfsB.aspx.cs">
+      <DependentUpon>CfsB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\cfs\CfsB.aspx.designer.cs">
+      <DependentUpon>CfsB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\cfs\Kit.aspx.cs">
+      <DependentUpon>Kit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\cfs\Kit.aspx.designer.cs">
+      <DependentUpon>Kit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\Decrypt.aspx.cs">
+      <DependentUpon>Decrypt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\Decrypt.aspx.designer.cs">
+      <DependentUpon>Decrypt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\demo.aspx.cs">
+      <DependentUpon>demo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\demo.aspx.designer.cs">
+      <DependentUpon>demo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\demoDataTable.aspx.cs">
+      <DependentUpon>demoDataTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\demoDataTable.aspx.designer.cs">
+      <DependentUpon>demoDataTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\demoHelper.ashx.cs">
+      <DependentUpon>demoHelper.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\camera\get.aspx.cs">
+      <DependentUpon>get.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\camera\get.aspx.designer.cs">
+      <DependentUpon>get.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\camera\save.aspx.cs">
+      <DependentUpon>save.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\camera\save.aspx.designer.cs">
+      <DependentUpon>save.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\job.aspx.cs">
+      <DependentUpon>job.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\job.aspx.designer.cs">
+      <DependentUpon>job.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\OpCookie.aspx.cs">
+      <DependentUpon>OpCookie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\OpCookie.aspx.designer.cs">
+      <DependentUpon>OpCookie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\rong360.aspx.cs">
+      <DependentUpon>rong360.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\rong360.aspx.designer.cs">
+      <DependentUpon>rong360.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\SSKDtest\LYtest\AssetInfo.aspx.cs">
+      <DependentUpon>AssetInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\SSKDtest\LYtest\AssetInfo.aspx.designer.cs">
+      <DependentUpon>AssetInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\SSKDtest\LYtest\Consult.aspx.cs">
+      <DependentUpon>Consult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\SSKDtest\LYtest\Consult.aspx.designer.cs">
+      <DependentUpon>Consult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\textCity.aspx.cs">
+      <DependentUpon>textCity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\textCity.aspx.designer.cs">
+      <DependentUpon>textCity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\uploadSnap.aspx.cs">
+      <DependentUpon>uploadSnap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\uploadSnap.aspx.designer.cs">
+      <DependentUpon>uploadSnap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UsersInfo\UsersLogin.aspx.cs">
+      <DependentUpon>UsersLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UsersInfo\UsersLogin.aspx.designer.cs">
+      <DependentUpon>UsersLogin.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\css\BWJS\" />
+    <Folder Include="Content\img\CreditCard\" />
+    <Folder Include="Content\img\Other\" />
+    <Folder Include="Content\img\xq\" />
+    <Folder Include="Test\SSKDtest\BZPtest\" />
+    <Folder Include="Test\SSKDtest\CCLtest\" />
+    <Folder Include="Test\SSKDtest\ZXKtest\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BWJS.AppCode\BWJS.AppCode.csproj">
+      <Project>{5e930246-56ee-484a-829f-ae91bb258882}</Project>
+      <Name>BWJS.AppCode</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BWJS.BLL\BWJS.BLL.csproj">
+      <Project>{fdedc76d-5bb4-4a07-9cd8-14fc0fe3bf4a}</Project>
+      <Name>BWJS.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BWJS.Model\BWJS.Model.csproj">
+      <Project>{221aa85c-c8e4-4f2b-ac0c-382bdd8f6052}</Project>
+      <Name>BWJS.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BWJS.SMS\BWJS.SMS.csproj">
+      <Project>{f23cb3bc-1d6a-4178-9d40-0abc653ca894}</Project>
+      <Name>BWJS.SMS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BWJSLog.BLL\BWJSLog.BLL.csproj">
+      <Project>{806120a4-77da-4311-b3de-87aea78168fc}</Project>
+      <Name>BWJSLog.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BWJSLog.Model\BWJSLog.Model.csproj">
+      <Project>{587469c2-9993-46d7-a3af-4e8b70404060}</Project>
+      <Name>BWJSLog.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mofang.BLL\Mofang.BLL.csproj">
+      <Project>{f048a070-0916-460f-8f9d-6829357219a3}</Project>
+      <Name>Mofang.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mofang.Model\Mofang.Model.csproj">
+      <Project>{c95fe306-d799-40fc-bcd1-91e66e5848aa}</Project>
+      <Name>Mofang.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MofangInterface.BLL\MofangInterface.BLL.csproj">
+      <Project>{bc4dea29-26e6-492a-8700-783c20083a59}</Project>
+      <Name>MofangInterface.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MofangInterface.Model\MofangInterface.Model.csproj">
+      <Project>{d968aa5e-e66c-4b40-a8a8-aa9d67d5ca8e}</Project>
+      <Name>MofangInterface.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityHelper\UtilityHelper.csproj">
+      <Project>{b9381b8a-312d-4953-ae06-3f2b5c22480a}</Project>
+      <Name>UtilityHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XBWN.BLL\XBWN.BLL.csproj">
+      <Project>{01932c79-b5bd-4fcf-a27e-f305b05cba35}</Project>
+      <Name>XBWN.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XBWN.DAL\XBWN.DAL.csproj">
+      <Project>{55d1bbc1-ce19-4870-b48e-49e99360c18f}</Project>
+      <Name>XBWN.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XBWN.Model\XBWN.Model.csproj">
+      <Project>{872adba6-3c6d-46a3-aa00-daf6286ec5e4}</Project>
+      <Name>XBWN.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>7173</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:7173/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此项目引用这台计算机上缺少的 NuGet 程序包。使用 NuGet 程序包还原可下载这些程序包。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

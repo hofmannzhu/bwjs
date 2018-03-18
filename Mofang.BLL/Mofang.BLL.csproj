@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F048A070-0916-460F-8F9D-6829357219A3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mofang.BLL</RootNamespace>
+    <AssemblyName>Mofang.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicantInfoBLL.cs" />
+    <Compile Include="ApplicationDataBLL.cs" />
+    <Compile Include="CardTypeBLL.cs" />
+    <Compile Include="InsurantInfoBLL.cs" />
+    <Compile Include="OrderApplyBLL.cs" />
+    <Compile Include="Helper\OrderApplyHelperBLL.cs" />
+    <Compile Include="OrderCancleBLL.cs" />
+    <Compile Include="OtherInfoBLL.cs" />
+    <Compile Include="ProductCategoryBLL.cs" />
+    <Compile Include="ProductsBLL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RelationBLL.cs" />
+    <Compile Include="TransactionsBLL.cs" />
+    <Compile Include="TravelDestinationBLL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BWJS.BLL\BWJS.BLL.csproj">
+      <Project>{fdedc76d-5bb4-4a07-9cd8-14fc0fe3bf4a}</Project>
+      <Name>BWJS.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BWJS.Model\BWJS.Model.csproj">
+      <Project>{221aa85c-c8e4-4f2b-ac0c-382bdd8f6052}</Project>
+      <Name>BWJS.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BWJSLog.BLL\BWJSLog.BLL.csproj">
+      <Project>{806120a4-77da-4311-b3de-87aea78168fc}</Project>
+      <Name>BWJSLog.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BWJSLog.Model\BWJSLog.Model.csproj">
+      <Project>{587469c2-9993-46d7-a3af-4e8b70404060}</Project>
+      <Name>BWJSLog.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mofang.DAL\Mofang.DAL.csproj">
+      <Project>{a02153be-94d7-4783-889b-d382243415f8}</Project>
+      <Name>Mofang.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mofang.Model\Mofang.Model.csproj">
+      <Project>{c95fe306-d799-40fc-bcd1-91e66e5848aa}</Project>
+      <Name>Mofang.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MofangInterface.BLL\MofangInterface.BLL.csproj">
+      <Project>{bc4dea29-26e6-492a-8700-783c20083a59}</Project>
+      <Name>MofangInterface.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MofangInterface.Model\MofangInterface.Model.csproj">
+      <Project>{d968aa5e-e66c-4b40-a8a8-aa9d67d5ca8e}</Project>
+      <Name>MofangInterface.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityHelper\UtilityHelper.csproj">
+      <Project>{b9381b8a-312d-4953-ae06-3f2b5c22480a}</Project>
+      <Name>UtilityHelper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

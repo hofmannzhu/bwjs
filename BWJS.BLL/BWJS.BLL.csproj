@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FDEDC76D-5BB4-4A07-9CD8-14FC0FE3BF4A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BWJS.BLL</RootNamespace>
+    <AssemblyName>BWJS.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdHelper\AdHelperBLL.cs" />
+    <Compile Include="Ad\AdPositionBLL.cs" />
+    <Compile Include="Ad\AdReleaseBLL.cs" />
+    <Compile Include="Ad\ResourceBLL.cs" />
+    <Compile Include="ApplicationBLL.cs" />
+    <Compile Include="CityAreaBLL.cs" />
+    <Compile Include="CompanyCategoryBLL.cs" />
+    <Compile Include="CompanyNetLoanBLL.cs" />
+    <Compile Include="CompanyRelationBLL.cs" />
+    <Compile Include="CookieMag\MerchantMagCookieBLL.cs" />
+    <Compile Include="CookieMag\MerchantFrontCookieBLL.cs" />
+    <Compile Include="DepartmentInfoBLL.cs" />
+    <Compile Include="FunctionBLL.cs" />
+    <Compile Include="IdCardLibraryBLL.cs" />
+    <Compile Include="LinkFun.cs" />
+    <Compile Include="MachineBLL.cs" />
+    <Compile Include="MachineSupplierBLL.cs" />
+    <Compile Include="NetLoanApplyBLL.cs" />
+    <Compile Include="NL_AssetInfoBLL.cs" />
+    <Compile Include="NL_BankBLL.cs" />
+    <Compile Include="NL_ConsultBLL.cs" />
+    <Compile Include="NL_ConsultStatusChangeLogBLL.cs" />
+    <Compile Include="NL_ContactsBLL.cs" />
+    <Compile Include="NL_IdentityInfoBLL.cs" />
+    <Compile Include="NL_LoanBLL.cs" />
+    <Compile Include="NL_PictureBLL.cs" />
+    <Compile Include="NL_ProfessionInfoBLL.cs" />
+    <Compile Include="NL_TaskBLL.cs" />
+    <Compile Include="OrderRebateCheckBLL.cs" />
+    <Compile Include="OrderRebateSettlementDetailsBLL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ChannelBLL.cs" />
+    <Compile Include="GlobalClassBLL.cs" />
+    <Compile Include="CompanyBLL.cs" />
+    <Compile Include="CompanyRebateBLL.cs" />
+    <Compile Include="OrderPayApplyBLL.cs" />
+    <Compile Include="OrderRebateBLL.cs" />
+    <Compile Include="OrderRebateSettlementApplyBLL.cs" />
+    <Compile Include="ProductRelationBLL.cs" />
+    <Compile Include="RegionBLL.cs" />
+    <Compile Include="RoleBLL.cs" />
+    <Compile Include="RoleFunctionBLL.cs" />
+    <Compile Include="NLLoanConfigBLL.cs" />
+    <Compile Include="R_UsersMachineBLL.cs" />
+    <Compile Include="SupplierInfoBLL.cs" />
+    <Compile Include="SysConfigBLL.cs" />
+    <Compile Include="SysSettingsBLL.cs" />
+    <Compile Include="UserBankBLL.cs" />
+    <Compile Include="UserRoleBLL.cs" />
+    <Compile Include="UsersBLL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BWJS.DAL\BWJS.DAL.csproj">
+      <Project>{f126e417-f38d-4f9e-aaaf-8b0c58b9622a}</Project>
+      <Name>BWJS.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BWJS.Model\BWJS.Model.csproj">
+      <Project>{221aa85c-c8e4-4f2b-ac0c-382bdd8f6052}</Project>
+      <Name>BWJS.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BWJSLog.BLL\BWJSLog.BLL.csproj">
+      <Project>{806120a4-77da-4311-b3de-87aea78168fc}</Project>
+      <Name>BWJSLog.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityHelper\UtilityHelper.csproj">
+      <Project>{b9381b8a-312d-4953-ae06-3f2b5c22480a}</Project>
+      <Name>UtilityHelper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
